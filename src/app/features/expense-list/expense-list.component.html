@@ -1,0 +1,5 @@
+<div class="container">
+  @for (expense of expenses; track expense.id) {
+  <app-expense [expense]="expense" />
+  }
+</div>

@@ -1,5 +1,61 @@
 <div class="container">
-  @for (expense of expenses; track expense.id) {
-  <app-expense [expense]="expense" />
-  }
+  <div class="container text-center col-6">
+    <h1 class="text-success">List of Expenses</h1>
+    <!-- <h2>February, 2024</h2> -->
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        aria-label="Text input with dropdown button"
+      />
+      <button
+        class="btn btn-outline-secondary dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Month
+      </button>
+      <button
+        class="btn btn-outline-secondary dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Category
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">January 2024</a></li>
+        <li><a class="dropdown-item" href="#">December 2023</a></li>
+        <li><a class="dropdown-item" href="#">November 2023</a></li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item" href="#">Separated link</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <div>
+      <table class="table align-middle caption-top">
+        <caption>
+          List of expenses
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Title</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            @for (expense of expenses; track expense.id) {
+            <app-expense [expense]="expense" />
+            }
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

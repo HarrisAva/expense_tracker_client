@@ -16,7 +16,8 @@ export class Expense {
     this.title = expense.title;
     this.description = expense.description;
     this.amount = expense.amount;
-    this.user = expense.user || new User({});
-    this.category = expense.category || "";
+    // this.user = expense.user || new User({});
+    this.user = expense.user || null;
+    this.category = expense.category || null;
   }
 }

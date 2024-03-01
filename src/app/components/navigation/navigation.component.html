@@ -1,1 +1,39 @@
-<p>navigation works!</p>
+<nav class="navbar">
+  <div class="brand-name">Expense Tracker</div>
+  <div class="nav-links">
+    @if (isLoggedIn()) {
+
+    <!-- <span>Welcome, {{ currentUser?.username }}</span> -->
+    <span>Welcome, ...</span>
+    <!-- 'currentUser?'' is for optional -->
+    <a (click)="logout()">Logout</a>
+
+    }@else {
+
+    <a
+      routerLink="/home"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Home</a
+    >
+    <a
+      routerLink="/expenses"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Expense</a
+    >
+    <a routerLink="/login">Login</a>
+    <a routerLink="/signup">Sign Up</a>
+    }
+  </div>
+</nav>
+
+<!-- <div class="sidebar" [class.active]="isSidebarVisible">
+  <a
+    routerLink=""
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Timeline</a
+  >
+  <a routerLink="/events" routerLinkActive="active">Events</a>
+</div> -->

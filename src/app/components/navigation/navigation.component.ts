@@ -1,12 +1,25 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss'
 })
 export class NavigationComponent {
+
+  constructor(private authService:AuthenticationService) {}
+
+  isLoggedIn(){
+    return this.authService.isLoggedIn();
+  }
+
+  logout(){
+    return this.authService.logout();
+
+  }
 
 }

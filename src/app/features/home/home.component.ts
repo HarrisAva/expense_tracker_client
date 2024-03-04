@@ -21,7 +21,7 @@ export class HomeComponent {
           this.expenses = expenses;
         },
         error: (error:any) => {
-          console.error('Errorfetching expenses', error);
+          console.error('Error fetching expenses', error);
         },
       });
   }

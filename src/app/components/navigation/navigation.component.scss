@@ -1,25 +1,30 @@
 .navbar {
-  display: flex;
-  justify-content: space-between;
+  display:flexbox;
+  justify-content:space-between;
   align-items: center;
-  background-color: #add8E6;
-  padding: 0.5rem 1rem;
+  background-color: lightblue;
+  padding: 1rem 1rem;
   position: sticky;
   top: 0;
   width: 100%;
+  box-shadow: 0 4px 8px rgba(77, 106, 117, 0.795);
 }
+// border-radius: 10px;
+// box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 
 .navbar .brand-name {
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;
-  padding-left: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color:darkblue;
+  padding-left: 1.5rem;
 }
 
 .navbar .nav-links a {
-  color: #333;
+  font-size: 1.3rem;
+  font-weight:bold;
+  color: darkblue;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   transition: background-color 0.3s ease-in-out;
   cursor: pointer;
 }
@@ -27,23 +32,25 @@
 .navbar .nav-links a:hover,
 .navbar .nav-link a.active {
   color: white;
-  background-color: #FFA500;
-  border-radius: 4px;
+  background-color: darkblue;
+  border-radius: 5px;
 }
 
 .nav-links .nav-left {
   display: flex;
-  justify-content: left;
+  justify-content:left;
   align-items: center;
-  font-weight: bold;
+  font-weight: bolder;
   gap: 1rem;
+  width: 400px;
 }
 .nav-links .nav-right {
   display: flex;
   justify-content: right;
   align-items: center;
-  font-weight: bold;
+  font-weight: bolder;
   gap: 1rem;
+  width: 400px;
 }
 
 // .menu-container{

@@ -1,14 +1,41 @@
 <div class="container">
-  <div class="container text-center col-6">
+  <div class="container text-center row-3">
     <h1 class="text-success">Expense Summary</h1>
     <h2>February, 2024</h2>
     <br />
     <br />
-    <h2>
-      Pie Chart / Bar Chart with option to filter by a given start/end date and
-      category
-    </h2>
-    <div class="input-group mb-3">
+    <h2>Pie Chart / Bar Chart</h2>
+    <h3>..filter by a given start/end date and category</h3>
+  </div>
+</div>
+<!-- <div class="container">
+  <div class="table-responsive">
+    <div>
+      <table class="table align-middle caption-top">
+        <caption>
+          List of expenses
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Title</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            @for (expense of expenses; track expense.id) {
+            <app-expense [expense]="expense" />
+            }
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="input-group mb-3">
       <input
         type="text"
         class="form-control"
@@ -36,32 +63,4 @@
         <li><a class="dropdown-item" href="#">November 2023</a></li>
         <li><hr class="dropdown-divider" /></li>
         <li><a class="dropdown-item" href="#">Separated link</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="table-responsive">
-    <div>
-      <table class="table align-middle caption-top">
-        <caption>
-          List of expenses
-        </caption>
-        <thead>
-          <tr>
-            <th scope="col">Date</th>
-            <th scope="col">Title</th>
-            <th scope="col">Amount</th>
-            <th scope="col">Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            @for (expense of expenses; track expense.id) {
-            <app-expense [expense]="expense" />
-            }
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
+      </ul>-->

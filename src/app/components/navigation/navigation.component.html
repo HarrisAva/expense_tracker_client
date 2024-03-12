@@ -2,6 +2,14 @@
   <div class="brand-name">Expense Tracker</div>
   <div class="nav-links">
     <!-- <div class="nav-links nav-left"> -->
+
+    @if (isLoggedIn()) {
+
+    <span class="welcome"
+      ><strong> Welcome, {{ currentUser.first_name }}</strong></span
+    >
+
+    <a (click)="logout()">Logout</a>
     <a
       routerLink="/"
       routerLinkActive="active"
@@ -14,13 +22,6 @@
       [routerLinkActiveOptions]="{ exact: true }"
       >Expenses</a
     >
-    <!-- </div> -->
-    <!-- <div class="nav-links nav-right"> -->
-    @if (isLoggedIn()) {
-
-    <!-- <span>Welcome, {{ currentUser.first_name }}</span> -->
-
-    <a (click)="logout()">Logout</a>
 
     }@else {
 

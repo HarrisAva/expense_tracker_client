@@ -1,5 +1,5 @@
 <div class="container">
-  <form [formGroup]="expenseNewForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="expenseEditForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="date"> Date </label>
       <input type="date" formControlName="date" placeholder="" required />
@@ -51,11 +51,11 @@
       </select>
     </div>
 
-    @for (error of errors; track $index) {
-    <p class="error">{{ error }}</p>
-    }
+    <!-- @for (error of errors; track $index) {
+    <p class="error">{{ error }}</p> -->
+    <!-- } -->
 
-    <button type="submit" [disabled]="!expenseNewForm.valid">Submit</button>
+    <button type="submit" [disabled]="!expenseEditForm.valid">Submit</button>
   </form>
 </div>
 

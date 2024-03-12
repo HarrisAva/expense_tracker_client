@@ -1,71 +1,77 @@
-<div class="container">
-  <div class="container text-center col-6">
-    <br />
-    <br />
+<body>
+  <div class="container">
+    <div class="container text-center col-6">
+      <h2 class="text-success">List of Expenses</h2>
 
-    <h1 class="text-success">List of Expenses</h1>
-    <br />
-
-    <!-- <h2>February, 2024</h2> -->
-    <div class="input-group mb-3">
-      <input
-        type="text"
-        class="form-control"
-        aria-label="Text input with dropdown button"
-      />
-      <button
-        class="btn btn-outline-secondary dropdown-toggle"
-        type="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Month
-      </button>
-      <button
-        class="btn btn-outline-secondary dropdown-toggle"
-        type="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Category
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end">
-        <li><a class="dropdown-item" href="#">January 2024</a></li>
-        <li><a class="dropdown-item" href="#">December 2023</a></li>
-        <li><a class="dropdown-item" href="#">November 2023</a></li>
-        <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="#">Separated link</a></li>
-      </ul>
+      <h4>February, 2024</h4>
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Text input with dropdown button"
+        />
+        <button
+          class="btn btn-outline-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Month
+        </button>
+        <button
+          class="btn btn-outline-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Category
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">January 2024</a></li>
+          <li><a class="dropdown-item" href="#">December 2023</a></li>
+          <li><a class="dropdown-item" href="#">November 2023</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-  <br />
-  <br />
-  <div>
-    <a class="add-expense" routerLink="/expense-new">Add Expense</a>
-  </div>
-
-  <div class="table-responsive">
+    <br />
+    <br />
     <div>
-      <table class="table align-middle caption-top">
-        <caption>
-          List of expenses
-        </caption>
+      <a class="add-expense" routerLink="/expense-new">Add Expense</a>
+    </div>
+
+    <div class="expense-table">
+      <table>
         <thead>
           <tr>
-            <th scope="col">Date</th>
-            <th scope="col">Title</th>
-            <th scope="col">Amount</th>
-            <th scope="col">Category</th>
+            <th>Date</th>
+            <th>Title</th>
+            <th>Amount</th>
+            <th>Category</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             @for (expense of expenses; track expense.id) {
             <app-expense [expense]="expense" />
+
+            <a
+              class="expense-link"
+              routerLink="/expense-edit"
+              routerLinkActive="active"
+              >Edit</a
+            >
+            <!-- <a class="expense-link" (click)="editExpense(expense)">Edit</a> -->
+            <a class="expense-link" (click)="deleteExpense(expense.id)"
+              >Delete</a
+            >
             }
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-</div>
+</body>
+
+<!-- [routerLinkActiveOptions]="{ exact: true }" -->

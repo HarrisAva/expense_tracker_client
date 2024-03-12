@@ -29,11 +29,11 @@ form input {
 }
 
 label {
-  margin-right: 0.5rem;
+  margin-right: 1rem;
   width: 100px;
   font-weight: bold;
   font-family: sans-serif;
-  font-size: 1.2rem
+  font-size: 1.1rem
 }
 
 input {
@@ -72,19 +72,4 @@ button:disabled {
 
 .error{
   color: red;
-}
-
-.register a {
-  color: darkblue;
-  text-decoration: underline;
-  padding: 0.5rem 2rem;
-  transition: background-color 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-.register a:hover,
-.register a.active {
-  color: white;
-  background-color: darkblue;
-  border-radius: 5px;
 }

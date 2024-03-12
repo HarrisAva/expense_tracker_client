@@ -22,9 +22,9 @@
 
     <button type="submit" [disabled]="!loginForm.valid">Login</button>
 
-    <p>
+    <p class="register">
       Not registered?
-      <a href="#">Create an account</a>
+      <a routerLink="/signup" (click)="onCreateAccount()">Create an account</a>
     </p>
   </form>
 </div>

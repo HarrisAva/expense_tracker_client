@@ -14,11 +14,12 @@ import { Router, ActivatedRoute, RouterModule } from '@angular/router';
 export class ExpenseListComponent implements OnInit {
 
   expenses: Expense[] = [];
+  // index: number;
 
-  constructor(private expenseService: ExpenseService) {}
+  constructor(private expenseService: ExpenseService, private router:Router, private route:ActivatedRoute) {}
 
   ngOnInit(): void {
-      this.expenseService.getExpenses().subscribe({
+      this.expenseService.getMyExpenses().subscribe({
         next: (expenses: Expense[]) => {
           this.expenses = expenses;
         },
@@ -28,5 +29,23 @@ export class ExpenseListComponent implements OnInit {
       });
   }
 
+  // editExpense(expense: Expense){
+  //   this.expenseService.updateExpense(expense).subscribe(updatedExpense => {
+  //     const index = this.expenses.findIndex(e => e.id === updatedExpense.id);
+  //     this.expenses[index] = updatedExpense;
+  //   });
+  // }
+
+  editExpense(){
+    this.router.navigate(['/expense-edit'])
+  }
+
+
+  deleteExpense(id: number){
+    this.expenseService.deleteExpense(id).subscribe({
+      next: () => this.expenses = this.expenses.filter(expense => expense.id !== id),
+      error: (err) => console.error(err)
+    });
+  }
 
 }

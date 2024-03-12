@@ -1,21 +1,12 @@
 <div class="container">
   <div>
-    <table class="table table-responsive align-middle">
-      <tr class="table-active" id="expense">
+    <table class="table">
+      <tr class="expense" id="expense">
         <td>{{ expense.date }}</td>
         <td>{{ expense.title }}</td>
         <td>{{ expense.amount }}</td>
-        <!-- <td>{{ expense.category.name }}</td>
-        <td>{{ expense.category.id }}</td>
-        <td>{{ expense.user.username }}</td> -->
-        <!-- <td>{{ expense.category}}</td> -->
-        <span class="badge bg-info rounded-pill">i</span>
-        <span class="badge bg-danger rounded-pill">X</span>
+        <td>{{ expense.category_id }}</td>
       </tr>
     </table>
   </div>
 </div>
-<!-- <div class="d-grid gap-2 d-md-block">
-  <button class="btn btn-outline-secondary btn-sm" type="submit">Edit</button>
-  <button class="btn btn-outline-danger btn-sm" type="submit">Delete</button>
-</div> -->

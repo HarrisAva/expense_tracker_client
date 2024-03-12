@@ -37,7 +37,11 @@ export class LoginComponent {
       })
     }
   }
-  
+
+  onCreateAccount(){
+    this.router.navigate(['/signup'])
+  }
+
 
 
 

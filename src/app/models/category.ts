@@ -4,7 +4,7 @@ export class Category {
   user_id: number;
   expense_id: number;
 
-  connstructor(category:any) {
+  constructor(category:any) {
     this.id = category.id;
     this.name = category.name;
     this.user_id = category.user_id;

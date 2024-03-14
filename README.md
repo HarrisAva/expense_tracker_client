@@ -1,3 +1,6 @@
+This application aims to manage your dialy expenses. You can input your expenses, track expenditures and view expenses summary. There are options to edit and delete the expenses.
+Back end project's respository https://github.com/HarrisAva/expense_tracker_api
+
 # ExpenseTrackerClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.

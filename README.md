@@ -1,5 +1,5 @@
-This application aims to manage your dialy expenses. You can input your expenses, track expenditures and view expenses summary. There are options to edit and delete the expenses.
-Back end project's respository https://github.com/HarrisAva/expense_tracker_api
+This application aims to manage your dialy expenses. You can input your expenses, track expenditures and view expenses summary in a given timeframe. There are options to edit and delete the expenses.
+Back-end project's respository https://github.com/HarrisAva/expense_tracker_api
 
 # ExpenseTrackerClient
 

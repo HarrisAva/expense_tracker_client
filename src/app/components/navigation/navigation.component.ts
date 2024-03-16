@@ -32,5 +32,4 @@ export class NavigationComponent implements OnInit{
     this.userService.setCurrentUser(null)
 
   }
-
 }

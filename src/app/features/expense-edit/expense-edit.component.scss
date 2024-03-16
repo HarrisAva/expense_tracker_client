@@ -1,32 +1,54 @@
-body {
-  font-family:Arial, Helvetica, sans-serif;
-  margin: 10px;
-}
-
 .container {
-  max-width: 800px;
-  margin: 0 auto;
-  background-color: #f9f9f9;
-  padding: 20px;
-
-}
-
-table {
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 52px);
+  align-items: center;
   width: 100%;
-  border-collapse: collapse;
+  background-color: #f0f0f0;
+
 }
 
-thead th {
-  background-color: #f2f2f2;
-  padding: 10px;
-  text-align: left;
+form{
+  width: 500px;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-tbody td {
-  padding: 10px;
-  border-top: 1px solid #ddd;
+.form-group {
+  display: flex;
+  align-items: center;
 }
 
+form input {
+  flex: 1;
+}
+
+label {
+  margin-right: 1rem;
+  width: 100px;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 1.1rem
+}
+
+input {
+  padding: .75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #222;
+  background-color: white;
+  font-weight: bold;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
 
 button {
   padding: .75rem;
@@ -40,6 +62,10 @@ button {
   color: white;
 }
 
+button.cancel {
+  background-color: orange;
+}
+
 button:hover{
   background-color: rgb(0, 94, 255);
 }
@@ -48,34 +74,6 @@ button:disabled {
   background-color: rgb(129, 200, 244);
 }
 
-.delete {
-  background-color: lightcoral;
-  cursor: pointer;
+.error{
+  color: red;
 }
-
-.delete:hover{
-  background-color: #bb6161
-}
-
-.add-expense {
-  background-color: #e28000;
-  font-size: 1.2rem;
-  font-weight:bold;
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem 2rem;
-  transition: background-color 0.3s ease-in-out;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.add-expense:hover {
-  background-color: #c07100;
-  cursor: pointer;
-}
-
-.expense-link{
-cursor: pointer;
-padding: .3rem;
-}
-

@@ -38,7 +38,7 @@
     <br />
     <br />
     <div>
-      <a class="add-expense" routerLink="/expense-new">Add Expense</a>
+      <a class="add-expense" routerLink="/expenses/new">Add Expense</a>
     </div>
 
     <div class="expense-table">
@@ -56,14 +56,8 @@
             @for (expense of expenses; track expense.id) {
             <app-expense [expense]="expense" />
 
-            <a
-              class="expense-link"
-              routerLink="/expense-edit"
-              routerLinkActive="active"
-              >Edit</a
-            >
-            <!-- <a class="expense-link" (click)="editExpense(expense)">Edit</a> -->
-            <a class="expense-link" (click)="deleteExpense(expense.id)"
+            <a class="expense-link" (click)="onEditExpense(expense.id)">Edit</a>
+            <a class="expense-link" (click)="onDeleteExpense(expense.id)"
               >Delete</a
             >
             }
@@ -73,5 +67,3 @@
     </div>
   </div>
 </body>
-
-<!-- [routerLinkActiveOptions]="{ exact: true }" -->

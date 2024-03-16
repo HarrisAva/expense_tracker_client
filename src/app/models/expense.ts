@@ -17,12 +17,12 @@ export class Expense {
     this.id = expense.id || 0;
     this.date = expense.date;
     this.title = expense.title;
-    this.description = expense.description;
+    this.description = expense.description || ' ';
     this.amount = expense.amount;
     this.user_id = expense.user_id;
     this.user = expense.user;
     this.category_id = expense.category_id;
-    this.category_name = expense.category_name
+    this.category_name = expense.category_name;
     this.category = expense.category;
   }
 }

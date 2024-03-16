@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Expense } from '../../models/expense';
 import { ExpenseService } from '../../services/expense.service';
 import { ExpenseComponent } from '../../components/expense/expense.component';
-import { Router, ActivatedRoute, RouterModule } from '@angular/router';
+import { Router, ActivatedRoute, RouterModule, Params } from '@angular/router';
 
 @Component({
   selector: 'app-expense-list',
@@ -14,7 +14,7 @@ import { Router, ActivatedRoute, RouterModule } from '@angular/router';
 export class ExpenseListComponent implements OnInit {
 
   expenses: Expense[] = [];
-  // index: number;
+  id: number;
 
   constructor(private expenseService: ExpenseService, private router:Router, private route:ActivatedRoute) {}
 
@@ -29,23 +29,14 @@ export class ExpenseListComponent implements OnInit {
       });
   }
 
-  // editExpense(expense: Expense){
-  //   this.expenseService.updateExpense(expense).subscribe(updatedExpense => {
-  //     const index = this.expenses.findIndex(e => e.id === updatedExpense.id);
-  //     this.expenses[index] = updatedExpense;
-  //   });
-  // }
-
-  editExpense(){
-    this.router.navigate(['/expense-edit'])
+  onEditExpense(id: number){
+    this.router.navigate(['/expenses-edit/', id])
   }
 
-
-  deleteExpense(id: number){
+  onDeleteExpense(id: number){
     this.expenseService.deleteExpense(id).subscribe({
       next: () => this.expenses = this.expenses.filter(expense => expense.id !== id),
       error: (err) => console.error(err)
     });
   }
-
 }

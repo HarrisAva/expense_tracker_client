@@ -1,15 +1,11 @@
 <nav class="navbar">
   <div class="brand-name">Expense Tracker</div>
   <div class="nav-links">
-    <!-- <div class="nav-links nav-left"> -->
-
     @if (isLoggedIn()) {
 
     <span class="welcome"
       ><strong> Welcome, {{ currentUser.first_name }}</strong></span
     >
-
-    <a (click)="logout()">Logout</a>
     <a
       routerLink="/"
       routerLinkActive="active"
@@ -22,6 +18,7 @@
       [routerLinkActiveOptions]="{ exact: true }"
       >Expenses</a
     >
+    <a (click)="logout()">Logout</a>
 
     }@else {
 
@@ -29,15 +26,4 @@
     <a routerLink="/signup">Sign Up</a>
     }
   </div>
-  <!-- </div> -->
 </nav>
-
-<!-- <div class="sidebar" [class.active]="isSidebarVisible">
-  <a
-    routerLink=""
-    routerLinkActive="active"
-    [routerLinkActiveOptions]="{ exact: true }"
-    >Timeline</a
-  >
-  <a routerLink="/events" routerLinkActive="active">Events</a>
-</div> -->

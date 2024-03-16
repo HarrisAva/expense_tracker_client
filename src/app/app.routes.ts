@@ -16,15 +16,16 @@ export const routes: Routes = [
     canActivate: [authGuard]
   },
   {
-    path: 'expense-new',
-    loadComponent: () => import("./features/expense-new/expense-new.component").then ((c) => c.ExpenseNewComponent),
-    canActivate: [authGuard]
-  },
-  {
-    path: 'expense-edit',
+    path: 'expenses-edit/:id',
     loadComponent: () => import("./features/expense-edit/expense-edit.component").then ((c) => c.ExpenseEditComponent),
     canActivate: [authGuard]
   },
+  {
+    path: 'expenses/new',
+    loadComponent: () => import("./features/expense-new/expense-new.component").then ((c) => c.ExpenseNewComponent),
+    canActivate: [authGuard]
+  },
+
   {
     path: 'login',
     loadComponent: () => import("./features/login/login.component").then ((c) => c.LoginComponent),

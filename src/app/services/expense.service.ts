@@ -17,8 +17,8 @@ export class ExpenseService {
 
   }
 
-  getExpense(index: number) {
-    return this.http.get<Expense>(`http://localhost:3000/expenses/${index}`)
+  getExpense(id: number): Observable<Expense> {
+    return this.http.get<Expense>(`http://localhost:3000/expenses/${id}`)
   }
 
   getMyExpenses(): Observable<Expense[]> {
@@ -31,8 +31,8 @@ export class ExpenseService {
 
   }
 
-  updateExpense(expense:Expense): Observable<Expense> {
-    return this.http.put<Expense>(`http://localhost:3000/expenses/${expense.id}`, expense);
+  updateExpense(id:number, expense:Expense): Observable<Expense> {
+    return this.http.put<Expense>(`http://localhost:3000/expenses/${id}`, expense);
   }
 
   deleteExpense(id: number): Observable<Expense> {

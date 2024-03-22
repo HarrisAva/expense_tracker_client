@@ -58,13 +58,13 @@ export class ExpenseEditComponent{
 
     this.expenseService.updateExpense(this.id, updatedExpenseData).subscribe((res) =>{
       console.log('Expense update successfully', res)
-      this.router.navigate(['/expense-list'])
+      this.router.navigate(['/expenses'])
     });
 
   }
 
   onCancel(){
-    this.router.navigate(['/expense-list'], {relativeTo: this.route});
+    this.router.navigate(['/expenses'], {relativeTo: this.route});
   }
 
   }

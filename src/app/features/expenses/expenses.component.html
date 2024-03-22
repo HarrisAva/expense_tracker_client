@@ -1,4 +1,4 @@
-<body>
+<!-- <body>
   <div class="container">
     <div class="container text-center col-6">
       <h2 class="text-success">List of Expenses</h2>
@@ -34,36 +34,38 @@
           <li><a class="dropdown-item" href="#">Separated link</a></li>
         </ul>
       </div>
-    </div>
-    <br />
-    <br />
-    <div>
-      <a class="add-expense" routerLink="/expenses/new">Add Expense</a>
-    </div>
-
-    <div class="expense-table">
-      <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Title</th>
-            <th>Amount</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            @for (expense of expenses; track expense.id) {
-            <app-expense [expense]="expense" />
-
-            <a class="expense-link" (click)="onEditExpense(expense.id)">Edit</a>
-            <a class="expense-link" (click)="onDeleteExpense(expense.id)"
-              >Delete</a
-            >
-            }
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    </div> -->
+<div class="container">
+  <br />
+  <br />
+  <div>
+    <a class="add-expense" routerLink="/expenses/new">Add Expense</a>
   </div>
-</body>
+  <br />
+
+  <div style="overflow-x: auto" class="expense-table">
+    <table>
+      <!-- <tr> -->
+      <!-- <th>Date</th>
+      <th>Title</th>
+      <th>Amount</th>
+      <th>Category</th> -->
+      <!-- </tr> -->
+
+      <tr>
+        <td>
+          @for (expense of expenses; track expense.id) {
+          <app-expense [expense]="expense" />
+
+          <a class="expense-link" (click)="onEditExpense(expense.id)">Edit</a>
+          <a class="expense-link" (click)="onDeleteExpense(expense.id)"
+            >Delete</a
+          >
+          }
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<!-- </div>
+</body> -->

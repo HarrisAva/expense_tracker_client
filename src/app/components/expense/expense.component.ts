@@ -14,35 +14,45 @@ import { AuthenticationService } from '../../services/authentication.service';
   templateUrl: './expense.component.html',
   styleUrl: './expense.component.scss'
 })
-export class ExpenseComponent implements OnInit{
+export class ExpenseComponent{
 
 
   // @Input({required:true}) expense:Expense;
    @Input({required:true}) expense:Expense = new Expense({});
-  // @Input() category:Category;
+   @Input() category:Category;
    @Input() index: number;
 
-   categories: Category;
-   errors: string[] = []
-  
 
-   constructor(
-    private categoryService: CategoryService,
-       ) {}
 
-   ngOnInit(){
 
-    this.categoryService.getCategories().subscribe({
-      next:(categories:Category) => {
-        this.categories = categories;
-        console.log(categories)
-      },
-      error: (error) => {
-        console.log('Error fetching categories',error)
-      }
-    })
 
-   }
+
+
+
+
+
+
+  //  categories: Category;
+  //  errors: string[] = []
+
+
+  //  constructor(
+  //   private categoryService: CategoryService,
+  //      ) {}
+
+    // ngOnInit(){
+
+  //   this.categoryService.getCategories().subscribe({
+  //     next:(categories:Category) => {
+  //       this.categories = categories;
+  //       console.log(categories)
+  //     },
+  //     error: (error) => {
+  //       console.log('Error fetching categories',error)
+  //     }
+  //   })
+
+  //  }
 
   }
 

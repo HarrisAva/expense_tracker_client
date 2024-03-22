@@ -6,13 +6,13 @@ import { Router, ActivatedRoute, RouterModule, Params } from '@angular/router';
 import { Category } from '../../models/category';
 
 @Component({
-  selector: 'app-expense-list',
+  selector: 'app-expenses',
   standalone: true,
   imports: [ExpenseComponent, RouterModule],
-  templateUrl: './expense-list.component.html',
-  styleUrl: './expense-list.component.scss'
+  templateUrl: './expenses.component.html',
+  styleUrl: './expenses.component.scss'
 })
-export class ExpenseListComponent implements OnInit {
+export class ExpensesComponent implements OnInit {
 
   expenses: Expense[] = [];
   categories: Category;

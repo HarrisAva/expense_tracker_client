@@ -11,12 +11,12 @@ export const routes: Routes = [
     canActivate: [authGuard]
   },
   {
-    path: 'expense-list',
-    loadComponent: () => import("./features/expense-list/expense-list.component").then ((c) => c.ExpenseListComponent),
+    path: 'expenses',
+    loadComponent: () => import("./features/expenses/expenses.component").then ((c) => c.ExpensesComponent),
     canActivate: [authGuard]
   },
   {
-    path: 'expenses-edit/:id',
+    path: 'expenses/:id',
     loadComponent: () => import("./features/expense-edit/expense-edit.component").then ((c) => c.ExpenseEditComponent),
     canActivate: [authGuard]
   },

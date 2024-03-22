@@ -8,10 +8,11 @@ export class User {
   email: string;
   username: string;
   expense: Expense;
+  category: Category;
   expense_id: number;
   category_id: number;
   category_name: string;
-  category: Category;
+
 
 
   constructor(user:any) {
@@ -20,9 +21,9 @@ export class User {
     this.last_name = user.last_name || "";
     this.email = user.email || "";
     this.username = user.username || "";
-    this.expense_id = Expense.id;
-    this.category_id = Expense.category.id;
-    this.category_name = Expense.category.name;
+    // this.expense_id = Expense.id;
+    // this.category_id = Expense.category.id;
+    // this.category_name = Expense.category.name;
   }
 }
 

@@ -3,6 +3,7 @@ import { Expense } from '../../models/expense';
 import { ExpenseService } from '../../services/expense.service';
 import { ExpenseComponent } from '../../components/expense/expense.component';
 import { Router, ActivatedRoute, RouterModule, Params } from '@angular/router';
+import { Category } from '../../models/category';
 
 @Component({
   selector: 'app-expense-list',
@@ -14,6 +15,7 @@ import { Router, ActivatedRoute, RouterModule, Params } from '@angular/router';
 export class ExpenseListComponent implements OnInit {
 
   expenses: Expense[] = [];
+  categories: Category;
   id: number;
 
   constructor(private expenseService: ExpenseService, private router:Router, private route:ActivatedRoute) {}

@@ -12,6 +12,8 @@ export class Expense {
   category_id: number;
   category_name: string;
   category: Category;
+  static id: any;
+  static category: any;
 
   constructor(expense:any) {
     this.id = expense.id || 0;
@@ -22,7 +24,7 @@ export class Expense {
     this.user_id = expense.user_id;
     this.user = expense.user;
     this.category_id = expense.category_id;
-    this.category_name = expense.category_name;
-    this.category = expense.category;
+    this.category_name = expense.category.name;
+    // this.category = expense.category;
   }
 }

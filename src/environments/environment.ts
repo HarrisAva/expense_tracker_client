@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl:'http://www.production.com'
+  apiUrl:'https://expensetracker-nrkt.onrender.com'
 };

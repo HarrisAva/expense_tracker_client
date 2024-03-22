@@ -46,8 +46,8 @@ export class ExpenseEditComponent{
             description: this.expense.description,
             category_id: this.expense.category_id
 
-          })
-        })
+          });
+        });
 
       }
     );

@@ -12,7 +12,7 @@ export class CategoryService {
     return this.http.get('http://localhost3000/categories')
   }
 
-  getCategory(id:string | number){
-    return this.http.get(`http://localhost3000/categories/${id}`)
-  }
+  // getCategory(id:string | number){
+  //   return this.http.get(`http://localhost3000/categories/${id}`)
+  // }
 }

@@ -35,5 +35,10 @@ export const routes: Routes = [
     path: 'signup',
     loadComponent: () => import("./features/signup/signup.component").then ((c) => c.SignupComponent),
     canActivate: [noAuthGuard]
+  },
+  {
+    path: 'categories',
+    loadComponent: () => import("./components/category/category.component").then ((c) => c.CategoryComponent),
+    canActivate: [authGuard]
   }
 ];

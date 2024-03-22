@@ -24,14 +24,6 @@ export class ExpenseComponent{
 
 
 
-
-
-
-
-
-
-
-
   //  categories: Category;
   //  errors: string[] = []
 

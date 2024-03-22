@@ -20,7 +20,7 @@ export class Expense {
     this.amount = expense.amount;
     this.user = expense.user;
     this.category_id = expense.category_id;
-    // this.category_name = expense.category.name;
-    this.category = expense.category;
+
+  
   }
 }

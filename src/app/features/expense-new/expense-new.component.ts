@@ -23,27 +23,26 @@ export class ExpenseNewComponent implements OnInit{
     category_id: new FormControl (''),
   })
 
-  categories:Category[]= []
   errors: string[] = []
 
   constructor(private authService:AuthenticationService, private router:Router, private expenseService:ExpenseService, private categoryService:CategoryService) {}
 
   ngOnInit(): void {
-    this.categoryService.getCategories().subscribe({
-      next:(categories:any) => {
-        this.categories = categories;
-      },
-      error: (error) => {
-        console.log(error)
-      }
-    });
+    // this.categoryService.getCategories().subscribe({
+    //   next:(categories:any) => {
+    //     this.categories = categories;
+    //   },
+    //   error: (error) => {
+    //     console.log(error)
+    //   }
+    // });
   }
 
   onSubmit(){
     const formValue = this.expenseNewForm.value
     this.expenseService.createExpense(formValue).subscribe({
       next: (res:any) => {
-        this.router.navigate(['/expense-list'])
+        this.router.navigate(['/expenses'])
       },
       error: (error:any) => {
         console.log(error.error)

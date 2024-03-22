@@ -3,19 +3,18 @@ import { Expense } from '../../models/expense';
 import { ExpenseService } from '../../services/expense.service';
 import { ExpenseComponent } from '../../components/expense/expense.component';
 import { Router, ActivatedRoute, RouterModule, Params } from '@angular/router';
-import { Category } from '../../models/category';
+
 
 @Component({
   selector: 'app-expenses',
   standalone: true,
   imports: [ExpenseComponent, RouterModule],
   templateUrl: './expenses.component.html',
-  styleUrl: './expenses.component.scss'
+  styleUrls: ['./expenses.component.scss']
 })
 export class ExpensesComponent implements OnInit {
 
   expenses: Expense[] = [];
-  categories: Category;
   id: number;
 
   constructor(private expenseService: ExpenseService, private router:Router, private route:ActivatedRoute) {}
@@ -32,7 +31,7 @@ export class ExpensesComponent implements OnInit {
   }
 
   onEditExpense(id: number){
-    this.router.navigate(['/expenses-edit/', id])
+    this.router.navigate(['/expense-edit/', id])
   }
 
   onDeleteExpense(id: number){

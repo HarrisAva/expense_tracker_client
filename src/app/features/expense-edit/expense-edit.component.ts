@@ -9,9 +9,9 @@ import { Expense } from '../../models/expense';
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './expense-edit.component.html',
-  styleUrl: './expense-edit.component.scss'
+  styleUrls: ['./expense-edit.component.scss']
 })
-export class ExpenseEditComponent{
+export class ExpenseEditComponent implements OnInit{
   id: number;
   expenseEditForm: FormGroup;
   expense: Expense;

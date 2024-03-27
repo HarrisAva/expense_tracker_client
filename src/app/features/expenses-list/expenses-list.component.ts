@@ -1,27 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { Expense } from '../../models/expense';
 import { ExpenseService } from '../../services/expense.service';
 import { ExpenseComponent } from '../../components/expense/expense.component';
 import { Router, ActivatedRoute, RouterModule, Params } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
-import { MonthFilterPipe } from '../../pipes/month-filter.pipe';
+import { FilterByMonthPipe } from '../../pipes/month-filter.pipe';
 
 
 @Component({
   selector: 'app-expenses',
   standalone: true,
-  imports: [ExpenseComponent, RouterModule, FormsModule, DatePipe, MonthFilterPipe],
-  templateUrl: './expenses.component.html',
-  styleUrls: ['./expenses.component.scss']
+  imports: [ExpenseComponent, RouterModule, FormsModule, DatePipe, FilterByMonthPipe, ],
+  templateUrl: './expenses-list.component.html',
+  styleUrls: ['./expenses-list.component.scss']
 })
-export class ExpensesComponent implements OnInit {
+export class ExpensesListComponent implements OnInit {
 
   expenses: Expense[] = [];
   id: number;
   totalExpenses: number;
   selectedMonth: number; // variable to store the selected month value
-  selectedCategory: number; // variable to store the selected category value
+  // selectedCategory: number; // variable to store the selected category value
 
   months:any = [
     {
@@ -62,7 +62,10 @@ export class ExpensesComponent implements OnInit {
     }
   ]
 
-  constructor(private expenseService: ExpenseService, private router:Router, private route:ActivatedRoute) {}
+  constructor(private expenseService: ExpenseService, private router:Router, private route:ActivatedRoute) {
+
+    // this.selectedMonth = 1;
+  }
 
   ngOnInit(): void {
      const totalExpenses = 0;
@@ -92,13 +95,4 @@ export class ExpensesComponent implements OnInit {
   }
 
 
-
-  // calculateTotalExpenses(expenses:any[]) {
-  //   let totalExpenses = 0;
-  //   for (let expense of expenses) {
-  //     totalExpenses += expense.amount;
-  //   }
-  //   return totalExpenses;
-
-  // }
 }

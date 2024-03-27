@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Expense } from '../models/expense';
@@ -25,6 +25,18 @@ export class ExpenseService {
     return this.http.get<Expense[]>('http://localhost:3000/my_expenses');
 
   }
+  // getFilteredExpenses(month: string, category: string){
+
+    // const month = selectedMonth;
+    // const category = selectedCategory;
+
+    // this.http.get('http://localhost:3000/my_expenses', {month, category}).subscribe(
+    //   res => {
+    //     console.log(res)
+    //   }
+    // )
+
+  // }
 
   createExpense(expense:Expense): Observable<Expense> {
     return this.http.post<Expense>('http://localhost:3000/expenses', expense);
@@ -38,6 +50,17 @@ export class ExpenseService {
   deleteExpense(id: number): Observable<Expense> {
     return this.http.delete<Expense>(`http://localhost:3000/expenses/${id}`);
   }
+
+  calculateTotalExpenses(expenses:any[]) {
+    let totalExpenses = 0;
+    for (let expense of expenses) {
+      totalExpenses += expense.amount;
+    }
+    return totalExpenses;
+
+  }
+
+
 }
 
 

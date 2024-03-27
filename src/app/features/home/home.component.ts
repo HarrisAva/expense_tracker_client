@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Expense } from '../../models/expense';
 import { ExpenseService } from '../../services/expense.service';
 import { ExpenseComponent } from '../../components/expense/expense.component';

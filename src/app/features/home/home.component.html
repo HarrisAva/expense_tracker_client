@@ -1,66 +1,87 @@
-<div class="container">
-  <div class="container text-center row-3">
-    <h1 class="text-success">Expense Summary</h1>
-    <h2>February, 2024</h2>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
     <br />
-    <br />
-    <h2>Pie Chart / Bar Chart</h2>
-    <h3>..filter by a given start/end date and category</h3>
-  </div>
-</div>
-<!-- <div class="container">
-  <div class="table-responsive">
-    <div>
-      <table class="table align-middle caption-top">
-        <caption>
-          List of expenses
-        </caption>
-        <thead>
-          <tr>
-            <th scope="col">Date</th>
-            <th scope="col">Title</th>
-            <th scope="col">Amount</th>
-            <th scope="col">Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            @for (expense of expenses; track expense.id) {
-            <app-expense [expense]="expense" />
-            }
-          </tr>
-        </tbody>
-      </table>
+
+    <div class="container">
+      <div class="container text-center row-3">
+        <h1 class="text-success">Expense Summary</h1>
+        <br />
+        <h5>(..//Todo - adding Pie Chart / Bar Chart..)</h5>
+        <br />
+        <h3>Spending Categories</h3>
+        <br />
+      </div>
+      <div class="form-group">
+        <select class="form-select">
+          <option selected>Select Month</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="3">April</option>
+          <option value="3">May</option>
+          <option value="3">June</option>
+          <option value="3">July</option>
+          <option value="3">August</option>
+          <option value="3">September</option>
+          <option value="3">October</option>
+          <option value="3">November</option>
+          <option value="3">December</option>
+        </select>
+        <select class="form-select">
+          <option selected>Select Category</option>
+          <option value="0">All Categories</option>
+          <option value="1">Home & Rental</option>
+          <option value="2">Utilities</option>
+          <option value="3">Car/Fuel/Transportation</option>
+          <option value="4">Groceries</option>
+          <option value="5">Restaurants & Dining</option>
+          <option value="6">Shopping & Entertainment</option>
+          <option value="7">Travel</option>
+          <option value="8">Insurance</option>
+          <option value="9">Finance & Taxes</option>
+          <option value="10">Education</option>
+          <option value="11">Health</option>
+          <option value="12">Others</option>
+        </select>
+      </div>
     </div>
-  </div>
-</div> -->
+  </body>
+</html>
+<!-- </div> -->
 
 <!-- <div class="input-group mb-3">
-      <input
-        type="text"
-        class="form-control"
-        aria-label="Text input with dropdown button"
-      />
-      <button
-        class="btn btn-outline-secondary dropdown-toggle"
-        type="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Month
-      </button>
-      <button
-        class="btn btn-outline-secondary dropdown-toggle"
-        type="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Category
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end">
-        <li><a class="dropdown-item" href="#">January 2024</a></li>
-        <li><a class="dropdown-item" href="#">December 2023</a></li>
-        <li><a class="dropdown-item" href="#">November 2023</a></li>
-        <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="#">Separated link</a></li>
-      </ul>-->
+  <input
+    type="text"
+    class="form-control"
+    aria-label="Text input with dropdown button"
+  />
+  <button
+    class="btn btn-outline-secondary dropdown-toggle"
+    type="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    Month
+  </button>
+  <button
+    class="btn btn-outline-secondary dropdown-toggle"
+    type="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    Category
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><a class="dropdown-item" href="#">January 2024</a></li>
+    <li><a class="dropdown-item" href="#">December 2023</a></li>
+    <li><a class="dropdown-item" href="#">November 2023</a></li>
+    <li><hr class="dropdown-divider" /></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div> -->

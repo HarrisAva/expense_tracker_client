@@ -3,12 +3,15 @@ import { Expense } from '../../models/expense';
 import { ExpenseService } from '../../services/expense.service';
 import { ExpenseComponent } from '../../components/expense/expense.component';
 import { Router, ActivatedRoute, RouterModule, Params } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
+import { MonthFilterPipe } from '../../pipes/month-filter.pipe';
 
 
 @Component({
   selector: 'app-expenses',
   standalone: true,
-  imports: [ExpenseComponent, RouterModule],
+  imports: [ExpenseComponent, RouterModule, FormsModule, DatePipe, MonthFilterPipe],
   templateUrl: './expenses.component.html',
   styleUrls: ['./expenses.component.scss']
 })
@@ -16,18 +19,65 @@ export class ExpensesComponent implements OnInit {
 
   expenses: Expense[] = [];
   id: number;
+  totalExpenses: number;
+  selectedMonth: number; // variable to store the selected month value
+  selectedCategory: number; // variable to store the selected category value
+
+  months:any = [
+    {
+      name: "January", value: 1
+    },
+    {
+      name: "February", value: 2
+    },
+    {
+      name: "March", value: 3
+    },
+    {
+      name: "April", value: 4
+    },
+    {
+      name: "May", value: 5
+    },
+    {
+      name: "June", value: 6
+    },
+    {
+      name: "July", value: 7
+    },
+    {
+      name: "August", value: 8
+    },
+    {
+      name: "September", value: 9
+    },
+    {
+      name: "October", value: 10
+    },
+    {
+      name: "November", value: 11
+    },
+    {
+      name: "December", value: 12
+    }
+  ]
 
   constructor(private expenseService: ExpenseService, private router:Router, private route:ActivatedRoute) {}
 
   ngOnInit(): void {
+     const totalExpenses = 0;
+
       this.expenseService.getMyExpenses().subscribe({
         next: (expenses: Expense[]) => {
           this.expenses = expenses;
+          this.totalExpenses = this.expenseService.calculateTotalExpenses(this.expenses)
         },
         error: (error:any) => {
           console.error('Error fetching expenses', error);
         },
       });
+
+
   }
 
   onEditExpense(id: number){
@@ -40,4 +90,15 @@ export class ExpensesComponent implements OnInit {
       error: (err) => console.error(err)
     });
   }
+
+
+
+  // calculateTotalExpenses(expenses:any[]) {
+  //   let totalExpenses = 0;
+  //   for (let expense of expenses) {
+  //     totalExpenses += expense.amount;
+  //   }
+  //   return totalExpenses;
+
+  // }
 }

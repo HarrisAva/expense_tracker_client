@@ -16,41 +16,14 @@
   // padding: 20px;
 
 }
+h1 {
+  text-align: center;
+}
 
 table {
   border-collapse: collapse;
   width: 100%;
-
-
 }
-// tr:nth-child(even) {
-//   background-color: #f2f2f2;
-// }
-
-// th, td {
-  // text-align: left;
-  // padding: 8px;
-  //  width:100%
-// }
-// td {
-//  height: 80px;
-//  vertical-align: middle;
-
-// }
-
-
-// thead th {
-//   background-color: #f2f2f2;
-//   padding: 10px;
-//   text-align: center;
-// }
-
-// tbody tr {
-//   padding: 10px;
-//   border-top: 1px solid #ddd;
-//   text-align: left;
-// }
-
 
 button {
   padding: .75rem;
@@ -102,6 +75,59 @@ button:disabled {
 cursor: pointer;
 padding: .3rem;
 }
+
+.form-group {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin: 0 auto
+}
+
+.form-select {
+  padding: .5rem;
+  font-size: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+.total {
+  display: flex;
+  justify-content: right;
+  font-size: 1.2rem;
+}
+
+
+// tr:nth-child(even) {
+//   background-color: #f2f2f2;
+// }
+
+// th, td {
+  // text-align: left;
+  // padding: 8px;
+  //  width:100%
+// }
+// td {
+//  height: 80px;
+//  vertical-align: middle;
+
+// }
+
+
+// thead th {
+//   background-color: #f2f2f2;
+//   padding: 10px;
+//   text-align: center;
+// }
+
+// tbody tr {
+//   padding: 10px;
+//   border-top: 1px solid #ddd;
+//   text-align: left;
+// }
+
 
 
 

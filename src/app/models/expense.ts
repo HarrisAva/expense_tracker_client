@@ -8,8 +8,9 @@ export class Expense {
   description: string;
   amount: number;
   user: User;
-  category_id: number;
+  category_name: string;
   category: Category;
+
 
   constructor(expense:any) {
     this.id = expense.id || 0;
@@ -18,7 +19,7 @@ export class Expense {
     this.description = expense.description || '';
     this.amount = expense.amount;
     this.user = expense.user;
-    this.category_id = expense.category_id;
+    this.category_name = expense.category_name;
 
 
   }

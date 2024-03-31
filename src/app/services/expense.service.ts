@@ -25,6 +25,15 @@ export class ExpenseService {
     return this.http.get<Expense[]>('http://localhost:3000/my_expenses');
 
   }
+
+  getExpensesByCategory(): Observable<any> {
+    return this.http.get<any>('http://localhost:3000/expenses_by_category');
+  }
+
+  getCategorySummary() {
+    return this.http.get<any[]>(`http://localhost:3000/category_summary`);
+  }
+
   // getFilteredExpenses(month: string, category: string){
 
     // const month = selectedMonth;

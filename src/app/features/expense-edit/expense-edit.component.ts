@@ -44,7 +44,7 @@ export class ExpenseEditComponent implements OnInit{
             title: this.expense.title,
             amount: this.expense.amount,
             description: this.expense.description,
-            category_id: this.expense.category_id
+            category_name: this.expense.category.name
 
           });
         });
@@ -58,7 +58,7 @@ export class ExpenseEditComponent implements OnInit{
 
     this.expenseService.updateExpense(this.id, updatedExpenseData).subscribe((res) =>{
       console.log('Expense update successfully', res)
-      this.router.navigate(['/expenses'])
+      this.router.navigate(['/expenses-list'])
     });
 
   }

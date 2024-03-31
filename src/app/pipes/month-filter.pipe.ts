@@ -15,4 +15,3 @@ import { Expense } from '../models/expense';
      return expenses.filter(expense => new Date(expense.date).getMonth() + 1 === selectedMonth);
    }
  }
- 

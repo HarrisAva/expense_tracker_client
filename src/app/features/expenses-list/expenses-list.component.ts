@@ -1,4 +1,4 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+import { Component, Input, NgModule, OnInit } from '@angular/core';
 import { Expense } from '../../models/expense';
 import { ExpenseService } from '../../services/expense.service';
 import { ExpenseComponent } from '../../components/expense/expense.component';
@@ -9,13 +9,16 @@ import { FilterByMonthPipe } from '../../pipes/month-filter.pipe';
 
 
 @Component({
-  selector: 'app-expenses',
+  selector: 'app-expenses-list',
   standalone: true,
   imports: [ExpenseComponent, RouterModule, FormsModule, DatePipe, FilterByMonthPipe, ],
   templateUrl: './expenses-list.component.html',
   styleUrls: ['./expenses-list.component.scss']
 })
 export class ExpensesListComponent implements OnInit {
+  // @Input({required:true}) expense:Expense = new Expense({});
+  // @Input() category:Category;
+  // @Input() index: number;
 
   expenses: Expense[] = [];
   id: number;
@@ -23,7 +26,7 @@ export class ExpensesListComponent implements OnInit {
   selectedMonth: number; // variable to store the selected month value
   // selectedCategory: number; // variable to store the selected category value
 
-  months:any = [
+  months = [
     {
       name: "January", value: 1
     },
@@ -64,7 +67,8 @@ export class ExpensesListComponent implements OnInit {
 
   constructor(private expenseService: ExpenseService, private router:Router, private route:ActivatedRoute) {
 
-    // this.selectedMonth = 1;
+  this.selectedMonth = 3; // set default month
+
   }
 
   ngOnInit(): void {
@@ -79,9 +83,15 @@ export class ExpensesListComponent implements OnInit {
           console.error('Error fetching expenses', error);
         },
       });
-
-
   }
+
+  // filterExpenses() {
+
+  //   this.filteredExpenses = this.expenses.filter(expense => {
+  //     const expenseMonth = new Date(expense.date).getMonth() + 1;
+  //     return expenseMonth === this.selectedMonth;
+  //   });
+  // }
 
   onEditExpense(id: number){
     this.router.navigate(['/expense-edit/', id])

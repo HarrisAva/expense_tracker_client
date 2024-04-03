@@ -4,7 +4,7 @@
     @if (isLoggedIn()) {
 
     <span class="welcome"
-      ><strong> Welcome, {{ currentUser.first_name }}</strong></span
+      ><strong> Welcome, {{ currentUser.first_name || "" }}</strong></span
     >
     <a
       routerLink="/"

@@ -1,4 +1,4 @@
-<div class="container text-center">
+<div class="container">
   <div>
     <br />
     <h2 class="text-success">Expense Summary</h2>
@@ -8,27 +8,27 @@
     <h4>Spending Categories</h4>
     <br />
   </div>
+  <!-- <h5>For {{ selectedMonth }}</h5> -->
 
-  <!-- <div *ngIf="categorySummary">
+  <!-- **the below is working ** -->
+  <div>
     <ul>
-      <li *ngFor="let category of categorySummary">
-        {{ category.category_id }}: {{ category.amount }}
+      @for (expense of expensesByCategory; track expense.id) {
+      <li>
+        {{ expense.category }} - Total amount: $
+        {{
+          expense.total_amount.toLocaleString(undefined, {
+            maximumFractionDigits: 2
+          })
+        }}
       </li>
-    </ul>
-  </div> -->
-  <ul *ngFor="let expense of expensesByCategory">
-    <li>Category: {{ expense.category }}</li>
-    <li>Total Amount: {{ expense.total_amount }}</li>
-  </ul>
 
-  <!-- <ul>
-    @for (expense of expensesByCategory; track expense.id) {
-    <li>
-      Category: {{ expense.category.id }} - Total Amount:
-      {{ expense.total_amount }}
-    </li>
-    }
-  </ul> -->
+      }
+    </ul>
+    <p class="total">
+      <strong>Total spending: ${{ totalAmount }} </strong>
+    </p>
+  </div>
   <!-- </div> -->
   <!-- <div class="form-group">
     <label for="selectedMonth">Select Month:</label>
@@ -73,15 +73,5 @@
       <option value="11">Health</option>
       <option value="12">Others</option>
     </select>
-  </div> -->
-
-  <!-- <div class="total">
-    <span
-      ><strong
-        >Total amount: ${{
-          totalExpenses.toLocaleString(undefined, { maximumFractionDigits: 2 })
-        }}
-      </strong></span
-    >
   </div> -->
 </div>

@@ -30,9 +30,10 @@ export class ExpenseService {
     return this.http.get<any>('http://localhost:3000/expenses_by_category');
   }
 
-  getCategorySummary() {
-    return this.http.get<any[]>(`http://localhost:3000/category_summary`);
+  getExpensesByCategoryAndMonth(): Observable<any> {
+    return this.http.get<any>('http://localhost:3000/expenses_by_category_by_month');
   }
+
 
   // getFilteredExpenses(month: string, category: string){
 
@@ -58,6 +59,10 @@ export class ExpenseService {
 
   deleteExpense(id: number): Observable<Expense> {
     return this.http.delete<Expense>(`http://localhost:3000/expenses/${id}`);
+  }
+
+  getTotalAmount() {
+    return this.http.get<number>('http://localhost:3000/total_amount')
   }
 
   calculateTotalExpenses(expenses:any[]) {

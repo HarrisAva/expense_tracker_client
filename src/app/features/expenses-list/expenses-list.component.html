@@ -1,45 +1,61 @@
-<div class="container">
-  <br />
-  <h3 class="text-success">List of Expenses</h3>
+<html>
+  <body>
+    <div class="container">
+      <h3 class="text-success">List of Expenses</h3>
 
-  <div class="form-group">
-    <!-- <select class="form-control" [(ngModel)]="selectedMonth">
-      <option>Select a month</option>
-      <option *ngFor="let month of months" [value]="month.value">
-        {{ month.name }}
-      </option>
-    </select> -->
-    <!-- <select class="form-select" [(ngModel)]="selectedMonth">
-      <option selected>Select Month</option>
-      <option value="1">January</option>
-      <option value="2">February</option>
-      <option value="3">March</option>
-      <option value="4">April</option>
-      <option value="5">May</option>
-      <option value="6">June</option>
-      <option value="7">July</option>
-      <option value="8">August</option>
-      <option value="9">September</option>
-      <option value="10">October</option>
-      <option value="11">November</option>
-      <option value="12">December</option>
-    </select> -->
-  </div>
-  <!-- <div>
-    <h4>Expenses for month: {{ selectedMonth }}</h4>
-    <ul>
-      <li *ngFor="let expense of expenses | filterByMonth : selectedMonth">
-        {{ expense.date }} - {{ expense.title }} - {{ expense.amount }} -
-        {{ expense.category.name }}
-      </li>
-    </ul>
-  </div> -->
+      <div>
+        <a class="add-expense" routerLink="/expenses/new">Add Expense</a>
+      </div>
 
-  <div>
-    <a class="add-expense" routerLink="/expenses/new">Add Expense</a>
-  </div>
-  <br />
-  <!-- <div class="total">
+      <div class="total">
+        <p>
+          <strong>Total amount: ${{ totalAmount }} </strong>
+        </p>
+        <!-- <span
+          ><strong
+            >Total expense: ${{
+              totalExpenses.toLocaleString(undefined, {
+                maximumFractionDigits: 2
+              })
+            }}
+          </strong></span
+        > -->
+      </div>
+
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th (click)="sort('date')">Date</th>
+              <th (click)="sort('title')">Title</th>
+              <th (click)="sort('amount')">Amount</th>
+              <th (click)="sort('category')">Category</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            @for (expense of expenses; track expense.id) {
+            <tr>
+              <td>
+                <!-- <app-expense [expense]="expense" /> -->
+                {{ expense.date }} {{ expense.title }} {{ expense.amount }}
+                {{ expense.category.name }}
+                <a class="expense-link" (click)="onEditExpense(expense.id)"
+                  >Edit</a
+                >
+                <a class="expense-link" (click)="onDeleteExpense(expense.id)"
+                  >Delete</a
+                >
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- <div class="total">
     <span
       ><strong
         >Total amount: ${{
@@ -49,52 +65,36 @@
     >
   </div> -->
 
-  <div>
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Title</th>
-          <th>Amount</th>
-          <th>Category</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          @for (expense of expenses; track expense.id) {
-          <td>{{ expense.date }}</td>
-          <td>{{ expense.title }}</td>
-          <td>{{ expense.amount }}</td>
-          <td>{{ expense.category.name }}</td>
-          <td>
-            <a class="expense-link" (click)="onEditExpense(expense.id)">Edit</a>
-          </td>
-          <td>
-            <a class="expense-link" (click)="onDeleteExpense(expense.id)"
-              >Delete</a
-            >
-          </td>
-          }
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <!-- </div> -->
-</div>
-
-<!-- <ul>
-    @for (expense of expenses; track expense.id) {
-    <li>
-      <app-expense [expense]="expense" />
-
-      {{ expense.date }}
-      {{ expense.title }}
-      {{ expense.amount }}
-      {{ expense.category_id }}
-
-      <a class="expense-link" (click)="onEditExpense(expense.id)">Edit</a>
-      <a class="expense-link" (click)="onDeleteExpense(expense.id)">Delete</a>
+<!-- -------------- for filter by month -------------- -->
+<!-- <div class="form-group"> -->
+<!-- <select class="form-control" [(ngModel)]="selectedMonth">
+    <option>Select a month</option>
+    <option *ngFor="let month of months" [value]="month.value">
+      {{ month.name }}
+    </option>
+  </select> -->
+<!-- <select class="form-select" [(ngModel)]="selectedMonth">
+    <option selected>Select Month</option>
+    <option value="1">January</option>
+    <option value="2">February</option>
+    <option value="3">March</option>
+    <option value="4">April</option>
+    <option value="5">May</option>
+    <option value="6">June</option>
+    <option value="7">July</option>
+    <option value="8">August</option>
+    <option value="9">September</option>
+    <option value="10">October</option>
+    <option value="11">November</option>
+    <option value="12">December</option>
+  </select> -->
+<!-- </div> -->
+<!-- <div>
+  <h4>Expenses for month: {{ selectedMonth }}</h4>
+  <ul>
+    <li *ngFor="let expense of expenses | filterByMonth : selectedMonth">
+      {{ expense.date }} - {{ expense.title }} - {{ expense.amount }} -
+      {{ expense.category.name }}
     </li>
-    }
-  </ul>  -->
+  </ul>
+</div> -->

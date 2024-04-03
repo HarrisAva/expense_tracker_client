@@ -1,62 +1,49 @@
-// body {
-//   font-family:Arial, Helvetica, sans-serif;
-//   margin: 10px;
-// }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  }
 
-.container {
 
+ .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
   // justify-content: center;
   // align-items: center;
   // width: 100%;
   // background-color: #f0f0f0;
   // min-height: 90vh;
-  // max-width: 800px;
-  // margin: 0 auto;
   // background-color: #f9f9f9;
-  // padding: 20px;
-
-}
-h1 {
+ }
+h3 {
   text-align: center;
+  padding: 10px;
 }
 
 table {
   border-collapse: collapse;
+  display:block;
   width: 100%;
 }
 
-button {
-  padding: .75rem;
-  border: none;
-  background-color: rgb(0, 157, 255);
-  border-radius: 5px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  color: white;
-}
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  }
 
-button:hover{
-  background-color: rgb(0, 94, 255);
-}
+  th {
+  background-color: #f2f2f2;
+  }
 
-button:disabled {
-  background-color: rgb(129, 200, 244);
-}
-
-.delete {
-  background-color: lightcoral;
-  cursor: pointer;
-}
-
-.delete:hover{
-  background-color: #bb6161
-}
+  tr:hover {
+  background-color: #f9f9f9;
+  }
 
 .add-expense {
   background-color: #e28000;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight:bold;
   color: white;
   text-decoration: none;
@@ -76,29 +63,58 @@ cursor: pointer;
 padding: .3rem;
 }
 
-.form-group {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-  margin: 0 auto
-}
-
-.form-select {
-  padding: .5rem;
-  font-size: 1.2rem;
-  text-align: center;
-  cursor: pointer;
-
-}
-
 .total {
-  display: flex;
+  display: block;
   justify-content: right;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  padding: 20px 0px 0px 10px
 }
 
+// .form-group {
+//   width: 20%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 5px;
+//   margin: 0 auto
+// }
+
+// .form-select {
+//   padding: .5rem;
+//   font-size: 1.2rem;
+//   text-align: center;
+//   cursor: pointer;
+
+// }
+
+// button {
+//   padding: .5rem;
+//   border: none;
+//   background-color: rgb(0, 157, 255);
+//   border-radius: 5px;
+//   font-size: 1.2rem;
+//   font-weight: bold;
+//   cursor: pointer;
+//   transition: background-color 0.3s;
+//   color: white;
+// }
+
+// button:hover{
+//   background-color: rgb(0, 94, 255);
+// }
+
+// button:disabled {
+//   background-color: rgb(129, 200, 244);
+// }
+
+// .delete {
+//   background-color: lightcoral;
+//   cursor: pointer;
+// }
+
+// .delete:hover{
+//   background-color: #bb6161
+// }
 
 // tr:nth-child(even) {
 //   background-color: #f2f2f2;

@@ -18,27 +18,39 @@ import { CommonModule } from '@angular/common';
 export class HomeComponent{
 
   expensesByCategory: any[];
-  // categorySummary: any[];
-  // expenses: Expense[] = [];
-  // id: number;
-  // totalExpenses: number;
-  // selectedMonth: string;
-  // selectedCategory: number;
-  // filteredExpenses: Expense [];
+  expensesByCategoryAndMonth: any [];
+  selectedMonth: string = 'April';
+  filteredExpenses: any[];
+  totalAmount: number;
 
   constructor(private expenseService: ExpenseService) {}
 
   ngOnInit() {
-//    this.expenseService.getCategorySummary().subscribe((data: any[]) => {
-//   this.categorySummary = data;
-//   console.log(data);
-// });
+
       this.expenseService.getExpensesByCategory().subscribe(data => {
         this.expensesByCategory = data;
-        console.log(data)
       });
 
-  }
+      this.getTotalAmount();
+
+      // this.expenseService.getExpensesByCategoryAndMonth().subscribe(data => {
+      //   this.expensesByCategoryAndMonth = data;
+      //   console.log(data)
+
+      //   this.filteredExpenses = this.expensesByCategoryAndMonth.filter(expense => expense.month === this.selectedMonth);
+
+      // });
+    }
+    getTotalAmount() {
+      this.expenseService.getTotalAmount().subscribe((data:any) => {
+        this.totalAmount = data.total_amount;
+      });
+    }
+
+    // getTotalExpenseForCategory(category: string): number {
+    //   return this.expensesByCategory.filter(expense => expense.category === category).reduce((acc, curr) => acc + curr.amount, 0);
+    // }
+    }
 
   // fetchExpensesByCategory() {
   //   this.expenseService.getExpensesByCategory().subscribe(data => {
@@ -46,7 +58,7 @@ export class HomeComponent{
   //     console.log(data)
   //   });
   // }
-}
+
 
 
 

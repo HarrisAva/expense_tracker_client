@@ -40,6 +40,7 @@ export class ExpenseNewComponent implements OnInit{
 
   onSubmit(){
     const formValue = this.expenseNewForm.value
+
     this.expenseService.createExpense(formValue).subscribe({
       next: (res:any) => {
         this.router.navigate(['/expenses-list'])

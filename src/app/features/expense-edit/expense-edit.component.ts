@@ -37,20 +37,27 @@ export class ExpenseEditComponent implements OnInit{
     this.route.params.subscribe(
       (params: Params) => {
         this.id = +params['id'];
-        this.expenseService.getExpense(this.id).subscribe((expense)=> {
-          this.expense = expense;
-          this.expenseEditForm.patchValue({
-            date: this.expense.date,
-            title: this.expense.title,
-            amount: this.expense.amount,
-            description: this.expense.description,
-            category_name: this.expense.category.name
 
-          });
-        });
 
       }
     );
+    this.setExpenseValues()
+
+  }
+
+  setExpenseValues() {
+    this.expenseService.getExpense(this.id).subscribe((expense)=> {
+
+      this.expense = expense;
+      this.expenseEditForm.patchValue({
+        date: this.expense.date,
+        title: this.expense.title,
+        amount: this.expense.amount,
+        description: this.expense.description,
+        category_id: this.expense.category_id
+
+      });
+    });
   }
 
   onSubmit() {
@@ -58,13 +65,13 @@ export class ExpenseEditComponent implements OnInit{
 
     this.expenseService.updateExpense(this.id, updatedExpenseData).subscribe((res) =>{
       console.log('Expense update successfully', res)
-      this.router.navigate(['/expenses-list'])
+      this.router.navigate(['/expenses-list'], {relativeTo: this.route})
     });
 
   }
 
   onCancel(){
-    this.router.navigate(['/expenses'], {relativeTo: this.route});
+    this.router.navigate(['/expenses-list'], {relativeTo: this.route});
   }
 
   }

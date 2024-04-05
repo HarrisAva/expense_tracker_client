@@ -10,6 +10,7 @@ export class Expense {
   user: User;
   category_id: number;
   category: Category;
+  category_name: string
 
   constructor(expense:any) {
     this.id = expense.id || 0;
@@ -19,6 +20,7 @@ export class Expense {
     this.amount = expense.amount;
     this.user = expense.user;
     this.category_id = expense.category_id;
+    this.category_name = expense.category_name;
 
 
   }

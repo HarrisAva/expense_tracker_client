@@ -25,51 +25,52 @@ export class ExpensesListComponent implements OnInit {
   id: number;
   totalAmount: number;
   selectedMonth: number; // variable to store the selected month value
+  sortProperty: any = '';
+  isAscending: boolean = true;
   // selectedCategory: number; // variable to store the selected category value
-  totalExpenses: number;
 
-  months = [
-    {
-      name: "January", value: 1
-    },
-    {
-      name: "February", value: 2
-    },
-    {
-      name: "March", value: 3
-    },
-    {
-      name: "April", value: 4
-    },
-    {
-      name: "May", value: 5
-    },
-    {
-      name: "June", value: 6
-    },
-    {
-      name: "July", value: 7
-    },
-    {
-      name: "August", value: 8
-    },
-    {
-      name: "September", value: 9
-    },
-    {
-      name: "October", value: 10
-    },
-    {
-      name: "November", value: 11
-    },
-    {
-      name: "December", value: 12
-    }
-  ]
+  // months = [
+  //   {
+  //     name: "January", value: 1
+  //   },
+  //   {
+  //     name: "February", value: 2
+  //   },
+  //   {
+  //     name: "March", value: 3
+  //   },
+  //   {
+  //     name: "April", value: 4
+  //   },
+  //   {
+  //     name: "May", value: 5
+  //   },
+  //   {
+  //     name: "June", value: 6
+  //   },
+  //   {
+  //     name: "July", value: 7
+  //   },
+  //   {
+  //     name: "August", value: 8
+  //   },
+  //   {
+  //     name: "September", value: 9
+  //   },
+  //   {
+  //     name: "October", value: 10
+  //   },
+  //   {
+  //     name: "November", value: 11
+  //   },
+  //   {
+  //     name: "December", value: 12
+  //   }
+  // ]
 
   constructor(private expenseService: ExpenseService, private router:Router, private route:ActivatedRoute) {
 
-  this.selectedMonth = 3; // set default month
+  // this.selectedMonth = 3; // set default month
 
   }
 
@@ -80,7 +81,7 @@ export class ExpensesListComponent implements OnInit {
         next: (expenses: Expense[]) => {
           this.expenses = expenses;
 
-           this.totalExpenses = this.expenseService.calculateTotalExpenses(this.expenses)
+          // this.totalExpenses = this.expenseService.calculateTotalExpenses(this.expenses)
         },
         error: (error:any) => {
           console.error('Error fetching expenses', error);
@@ -103,12 +104,26 @@ export class ExpensesListComponent implements OnInit {
     this.expenseService.deleteExpense(id).subscribe({
       next: () => this.expenses = this.expenses.filter(expense => expense.id !== id),
       error: (err) => console.error(err)
+
     });
   }
 
-  sort(property: keyof Expense) {
-    this.expenses.sort((a, b) => a[property] > b[property] ? 1: -1);
+  sortData(property: keyof Expense) {
+    if (this.sortProperty === property) {
+      this.isAscending = !this.isAscending;
+    } else {
+      this.sortProperty = property;
+      this.isAscending = true;
+    }
+    this.expenses.sort((a, b) => {
+      return this.isAscending ? (a[property] > b[property] ? 1: -1) : (b[property] > a[property] ? 1 : -1);
+      });
+      console.log(this.expenses)
   }
+
+
+
+
 
   // filterExpenses() {
 

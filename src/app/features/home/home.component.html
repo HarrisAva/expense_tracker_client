@@ -10,26 +10,30 @@
   </div>
   <!-- <h5>For {{ selectedMonth }}</h5> -->
 
-  <!-- **the below is working ** -->
   <div>
-    <ul>
-      @for (expense of expensesByCategory; track expense.id) {
-      <li>
-        {{ expense.category }} - Total amount: $
-        {{
-          expense.total_amount.toLocaleString(undefined, {
-            maximumFractionDigits: 2
-          })
-        }}
-      </li>
+    <table>
+      <thead>
+        <tr>
+          <th class="sort-header" (click)="sortData('category')">Category</th>
+          <th class="sort-header" (click)="sortData('total_amount')">
+            Total Amount
+          </th>
+        </tr>
+      </thead>
 
-      }
-    </ul>
-    <p class="total">
-      <strong>Total spending: ${{ totalAmount }} </strong>
-    </p>
+      <tbody>
+        @for (expense of expensesByCategory; track expense.id) {
+        <tr>
+          <td>
+            <!-- <app-expense [expense]="expense" /> -->
+            {{ expense.category }} {{ expense.total_amount }}
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
   </div>
-  <!-- </div> -->
+
   <!-- <div class="form-group">
     <label for="selectedMonth">Select Month:</label>
     <select id="month" [(ngModel)]="selectedMonth" (change)="filterExpenses()"> -->

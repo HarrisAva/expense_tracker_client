@@ -11,25 +11,18 @@
         <p>
           <strong>Total amount: ${{ totalAmount }} </strong>
         </p>
-        <!-- <span
-          ><strong
-            >Total expense: ${{
-              totalExpenses.toLocaleString(undefined, {
-                maximumFractionDigits: 2
-              })
-            }}
-          </strong></span
-        > -->
       </div>
 
       <div>
         <table>
           <thead>
             <tr>
-              <th (click)="sort('date')">Date</th>
-              <th (click)="sort('title')">Title</th>
-              <th (click)="sort('amount')">Amount</th>
-              <th (click)="sort('category')">Category</th>
+              <th class="sort-header" (click)="sortData('date')">Date</th>
+              <th class="sort-header" (click)="sortData('title')">Title</th>
+              <th class="sort-header" (click)="sortData('amount')">Amount</th>
+              <th class="sort-header" (click)="sortData('category')">
+                Category
+              </th>
             </tr>
           </thead>
 
@@ -37,7 +30,6 @@
             @for (expense of expenses; track expense.id) {
             <tr>
               <td>
-                <!-- <app-expense [expense]="expense" /> -->
                 {{ expense.date }} {{ expense.title }} {{ expense.amount }}
                 {{ expense.category.name }}
                 <a class="expense-link" (click)="onEditExpense(expense.id)"
@@ -55,15 +47,6 @@
     </div>
   </body>
 </html>
-<!-- <div class="total">
-    <span
-      ><strong
-        >Total amount: ${{
-          totalExpenses.toLocaleString(undefined, { maximumFractionDigits: 2 })
-        }}
-      </strong></span
-    >
-  </div> -->
 
 <!-- -------------- for filter by month -------------- -->
 <!-- <div class="form-group"> -->

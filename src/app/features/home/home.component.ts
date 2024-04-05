@@ -20,8 +20,10 @@ export class HomeComponent{
   expensesByCategory: any[];
   expensesByCategoryAndMonth: any [];
   selectedMonth: string = 'April';
-  filteredExpenses: any[];
+  // filteredExpenses: any[];
   totalAmount: number;
+  sortProperty: any = '';
+  isAscending: boolean = true;
 
   constructor(private expenseService: ExpenseService) {}
 
@@ -29,6 +31,7 @@ export class HomeComponent{
 
       this.expenseService.getExpensesByCategory().subscribe(data => {
         this.expensesByCategory = data;
+        console.log(data)
       });
 
       this.getTotalAmount();
@@ -47,9 +50,17 @@ export class HomeComponent{
       });
     }
 
-    // getTotalExpenseForCategory(category: string): number {
-    //   return this.expensesByCategory.filter(expense => expense.category === category).reduce((acc, curr) => acc + curr.amount, 0);
-    // }
+    sortData(property: any) {
+      if (this.sortProperty === property) {
+        this.isAscending = !this.isAscending;
+      } else {
+        this.sortProperty = property;
+        this.isAscending = true;
+      }
+      this.expensesByCategory.sort((a, b) => {
+        return this.isAscending ? (a[property] > b[property] ? 1: -1) : (b[property] > a[property] ? 1 : -1);
+        });
+    }
     }
 
   // fetchExpensesByCategory() {

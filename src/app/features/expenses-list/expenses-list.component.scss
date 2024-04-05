@@ -23,14 +23,18 @@ h3 {
 
 table {
   border-collapse: collapse;
-  display:block;
-  width: 100%;
+  width: 100%
+  // display:grid;
+  // gap: 10px;
+  // width: 100%;
+
 }
 
 th, td {
   padding: 8px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+  width: 100%;
   }
 
   th {
@@ -61,6 +65,10 @@ th, td {
 .expense-link{
 cursor: pointer;
 padding: .3rem;
+}
+
+.sort-header {
+  cursor: pointer;
 }
 
 .total {

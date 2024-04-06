@@ -1,29 +1,52 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
 import { AuthenticationService } from '../../services/authentication.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss'
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit{
 
-  signupForm: FormGroup = new FormGroup({
-    first_name: new FormControl(''),
-    last_name: new FormControl(''),
-    email: new FormControl(''),
-    username: new FormControl(''),
-    password: new FormControl(''),
-    password_confirmation: new FormControl('')
-  })
+  // signupForm: FormGroup = new FormGroup({
+  //   first_name: new FormControl(''),
+  //   last_name: new FormControl(''),
+  //   email: new FormControl(''),
+  //   username: new FormControl(''),
+  //   password: new FormControl(''),
+  //   password_confirmation: new FormControl('')
+  // })
+  signupForm: FormGroup;
 
   errors:string[] = []
 
-  constructor(private authService:AuthenticationService, private router:Router){}
+  constructor(private authService:AuthenticationService, private router:Router, route: ActivatedRoute, private formBuilder: FormBuilder){
+
+    this.signupForm = this.formBuilder.group ({
+      first_name: ['', Validators.required],
+      last_name: ['', Validators.required],
+      //  email: ['', Validators.required, Validators.email],
+      email: ['', Validators.required],
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+      password_confirmation: ['', Validators.required],
+
+    });
+  }
+
+  ngOnInit(): void {
+
+  }
+
+  ngOnDestroy() {
+    this.signupForm.reset();
+  }
 
   onSignup(){
     const formValue = this.signupForm.value
@@ -36,5 +59,9 @@ export class SignupComponent {
         this.errors = error.error
       }
     })
+  }
+
+  onCancel(){
+    this.router.navigate(['/']);
   }
 }

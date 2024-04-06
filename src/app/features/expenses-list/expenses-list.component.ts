@@ -23,7 +23,7 @@ export class ExpensesListComponent implements OnInit {
 
   expenses: Expense[] = [];
   id: number;
-  totalAmount: number;
+  totalAmount: number = 0;
   selectedMonth: number; // variable to store the selected month value
   sortProperty: any = '';
   isAscending: boolean = true;

@@ -2,21 +2,46 @@
   <form [formGroup]="loginForm" (ngSubmit)="login()">
     <div class="form-group">
       <label for="username"> Username </label>
-      <input type="text" formControlName="username" placeholder="" required />
+      <input
+        id="username"
+        name="username"
+        type="text"
+        formControlName="username"
+        placeholder=""
+        required
+      />
     </div>
+    <p
+      class="help is-danger"
+      *ngIf="
+        !loginForm.get('username').valid && loginForm.get('username').touched
+      "
+    >
+      <small>Username is required</small>
+    </p>
     <div class="form-group">
       <label for="password"> Password </label>
       <input
+        id="password"
+        name="password"
         type="password"
         formControlName="password"
         placeholder=""
         required
       />
     </div>
+    <p
+      class="help is-danger"
+      *ngIf="
+        !loginForm.get('password').valid && loginForm.get('password').touched
+      "
+    >
+      <small>Password is required</small>
+    </p>
 
     @if(isError) {
     <p class="error">
-      Username and Password credentials failed. Please try again
+      Username and Password credentials failed. Please try again.
     </p>
     }
 

@@ -1,25 +1,34 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthenticationService } from '../../services/authentication.service';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
 
-  loginForm: FormGroup = new FormGroup({
-    username: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required)
-  })
+  // loginForm: FormGroup = new FormGroup({
+  //   username: new FormControl('', Validators.required),
+  //   password: new FormControl('', Validators.required)
+  // })
+
+  loginForm: FormGroup;
 
   isError:boolean = false;
 
-  constructor(private authService:AuthenticationService, private router:Router) {}
+  constructor(private authService:AuthenticationService, private router:Router, private formBuilder: FormBuilder) {
+
+    this.loginForm = this.formBuilder.group ({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    })
+  }
 
   login() {
     if (this.loginForm.valid) {

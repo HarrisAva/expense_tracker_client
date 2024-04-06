@@ -2,43 +2,125 @@
   <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
     <div class="form-group">
       <label for="first_name"> First Name </label>
-      <input type="text" formControlName="first_name" placeholder="" required />
+      <input
+        id="first_name"
+        name="first_name"
+        class="input"
+        type="text"
+        formControlName="first_name"
+        placeholder=""
+      />
     </div>
+    <p
+      class="help is-danger"
+      *ngIf="
+        !signupForm.get('first_name').valid &&
+        signupForm.get('first_name').touched
+      "
+    >
+      <small>First name is required</small>
+    </p>
     <div class="form-group">
       <label for="last_name"> Last Name </label>
-      <input type="text" formControlName="last_name" placeholder="" required />
+      <input
+        id="last_name"
+        name="last_name"
+        class="input"
+        type="text"
+        formControlName="last_name"
+        placeholder=""
+      />
     </div>
+    <p
+      class="help is-danger"
+      *ngIf="
+        !signupForm.get('last_name').valid &&
+        signupForm.get('last_name').touched
+      "
+    >
+      <small>Last name is required</small>
+    </p>
     <div class="form-group">
       <label for="email"> Email </label>
-      <input type="email" formControlName="email" placeholder="" required />
+      <input
+        id="email"
+        name="email"
+        class="input"
+        type="email"
+        formControlName="email"
+        placeholder=""
+      />
     </div>
+    <p
+      class="help is-danger"
+      *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched"
+    >
+      <small>Email is required</small>
+    </p>
     <div class="form-group">
       <label for="username"> Username </label>
-      <input type="text" formControlName="username" placeholder="" required />
+      <input
+        id="username"
+        name="username"
+        class="input"
+        type="text"
+        formControlName="username"
+        placeholder=""
+      />
     </div>
+    <p
+      class="help is-danger"
+      *ngIf="
+        !signupForm.get('username').valid && signupForm.get('username').touched
+      "
+    >
+      <small>Username is required</small>
+    </p>
     <div class="form-group">
       <label for="password"> Password </label>
       <input
+        id="password"
+        name="password"
+        class="input"
         type="password"
         formControlName="password"
         placeholder=""
-        required
       />
     </div>
+    <p
+      class="help is-danger"
+      *ngIf="
+        !signupForm.get('password').valid && signupForm.get('password').touched
+      "
+    >
+      <small>Password is required</small>
+    </p>
     <div class="form-group">
       <label for="password_confirmation"> Password Confirmation </label>
       <input
+        id="password_confirmation"
+        name="password_confirmation"
+        class="input"
         type="password"
         formControlName="password_confirmation"
         placeholder=""
-        required
       />
     </div>
+    <p
+      class="help is-danger"
+      *ngIf="
+        !signupForm.get('password_confirmation').valid &&
+        signupForm.get('password_confirmation').touched
+      "
+    >
+      <small>Password confirmation is required</small>
+    </p>
 
     @for (error of errors; track $index) {
     <p class="error">{{ error }}</p>
     }
 
-    <button type="submit" [disabled]="!signupForm.valid">Sign Up</button>
+    <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+    <button class="cancel" type="button" (click)="onCancel()">Cancel</button>
   </form>
 </div>

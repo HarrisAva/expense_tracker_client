@@ -37,7 +37,7 @@ label {
 }
 
 input {
-  padding: .75rem;
+  padding: .5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   color: #222;
@@ -68,6 +68,13 @@ button:hover{
 
 button:disabled {
   background-color: rgb(129, 200, 244);
+}
+button.cancel {
+  background-color: orange;
+}
+
+.help.is-danger {
+  color: red;
 }
 
 .error{

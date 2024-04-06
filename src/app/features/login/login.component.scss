@@ -50,8 +50,12 @@ input:focus {
   outline: none;
 }
 
+.help.is-danger {
+  color: red;
+}
+
 button {
-  padding: .75rem;
+  padding: .55rem;
   border: none;
   background-color: rgb(0, 157, 255);
   border-radius: 5px;

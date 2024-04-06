@@ -1,49 +1,50 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  }
-
-
- .container {
+.container {
+  display: flex;
+  flex-direction: column;
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
-  // justify-content: center;
-  // align-items: center;
-  // width: 100%;
+  padding: 10px;
   // background-color: #f0f0f0;
-  // min-height: 90vh;
+  min-height: 90vh;
   // background-color: #f9f9f9;
  }
-h3 {
+// body {
+//   font-family: Arial, sans-serif;
+//   margin: 0;
+//   padding: 0;
+//   }
+
+h2 {
   text-align: center;
   padding: 10px;
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%
-  // display:grid;
-  // gap: 10px;
-  // width: 100%;
+// table {
+//   border-collapse: collapse;
+//   width: 100%;
+//   gap: 10px;
+// }
 
-}
+// th, td {
+//   padding: 8px;
+//   text-align: left;
+//   border-bottom: 1px solid #ddd;
+//   width: 100%;
+//   }
 
+//   th {
+//   background-color: #f2f2f2;
+//   }
+
+//   tr:hover {
+//   background-color: #f9f9f9;
+//   }
 th, td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  width: 100%;
-  }
-
-  th {
-  background-color: #f2f2f2;
-  }
-
-  tr:hover {
-  background-color: #f9f9f9;
-  }
+  text-align: center;
+}
+.number-column {
+  text-align: right;
+}
 
 .add-expense {
   background-color: #e28000;
@@ -64,7 +65,7 @@ th, td {
 
 .expense-link{
 cursor: pointer;
-padding: .3rem;
+padding: .8rem;
 }
 
 .sort-header {

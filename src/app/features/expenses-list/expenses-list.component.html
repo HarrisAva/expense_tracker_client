@@ -1,26 +1,43 @@
 <html>
   <body>
     <div class="container">
-      <h3 class="text-success">List of Expenses</h3>
-
+      <br />
+      <h2 class="text-success">List of Expenses</h2>
       <div>
         <a class="add-expense" routerLink="/expenses/new">Add Expense</a>
       </div>
 
       <div class="total">
         <p>
-          <strong>Total amount: ${{ totalAmount }} </strong>
+          <strong
+            >Total amount: ${{
+              totalAmount.toLocaleString("en-US", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+              })
+            }}
+          </strong>
         </p>
       </div>
 
       <div>
-        <table>
+        <table class="table table-striped table-bordered table-hover">
           <thead>
             <tr>
-              <th class="sort-header" (click)="sortData('date')">Date</th>
-              <th class="sort-header" (click)="sortData('title')">Title</th>
-              <th class="sort-header" (click)="sortData('amount')">Amount</th>
-              <th class="sort-header" (click)="sortData('category')">
+              <th scope="col" class="sort-header" (click)="sortData('date')">
+                Date
+              </th>
+              <th scope="col" class="sort-header" (click)="sortData('title')">
+                Title
+              </th>
+              <th scope="col" class="sort-header" (click)="sortData('amount')">
+                Amount
+              </th>
+              <th
+                scope="col"
+                class="sort-header"
+                (click)="sortData('category')"
+              >
                 Category
               </th>
             </tr>
@@ -28,10 +45,25 @@
 
           <tbody>
             @for (expense of expenses; track expense.id) {
-            <tr>
+            <tr scope="row">
               <td>
-                {{ expense.date }} {{ expense.title }} {{ expense.amount }}
+                {{ expense.date }}
+              </td>
+              <td>
+                {{ expense.title }}
+              </td>
+              <td class="number-column">
+                {{
+                  expense.amount.toLocaleString("en-US", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                  })
+                }}
+              </td>
+              <td>
                 {{ expense.category.name }}
+              </td>
+              <td>
                 <a class="expense-link" (click)="onEditExpense(expense.id)"
                   >Edit</a
                 >

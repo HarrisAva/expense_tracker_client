@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationService } from '../../services/authentication.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ExpenseService } from '../../services/expense.service';
 import { Category } from '../../models/category';
 import { CategoryService } from '../../services/category.service';
@@ -25,7 +25,7 @@ export class ExpenseNewComponent implements OnInit{
 
   errors: string[] = []
 
-  constructor(private authService:AuthenticationService, private router:Router, private expenseService:ExpenseService, private categoryService:CategoryService) {}
+  constructor(private authService:AuthenticationService, private router:Router, private route: ActivatedRoute ,private expenseService:ExpenseService, private categoryService:CategoryService) {}
 
   ngOnInit(): void {
     // this.categoryService.getCategories().subscribe({
@@ -50,6 +50,10 @@ export class ExpenseNewComponent implements OnInit{
         this.errors = error.error
       }
     })
+  }
+
+  onCancel(){
+    this.router.navigate(['/expenses-list'], {relativeTo: this.route});
   }
 
 }

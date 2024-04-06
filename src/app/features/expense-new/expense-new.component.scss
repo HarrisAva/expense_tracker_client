@@ -61,7 +61,9 @@ button {
   transition: background-color 0.3s;
   color: white;
 }
-
+button.cancel {
+  background-color: orange;
+}
 button:hover{
   background-color: rgb(0, 94, 255);
 }

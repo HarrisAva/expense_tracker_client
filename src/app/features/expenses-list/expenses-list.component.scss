@@ -17,6 +17,7 @@
 h2 {
   text-align: center;
   padding: 10px;
+  text-shadow: .5px .5px .5px lightgreen;
 }
 
 // table {
@@ -39,6 +40,10 @@ h2 {
 //   tr:hover {
 //   background-color: #f9f9f9;
 //   }
+table {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 th, td {
   text-align: center;
 }
@@ -52,10 +57,12 @@ th, td {
   font-weight:bold;
   color: white;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem .5rem;
   transition: background-color 0.3s ease-in-out;
   border-radius: 10px;
   cursor: pointer;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+  // box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .add-expense:hover {
@@ -63,9 +70,11 @@ th, td {
   cursor: pointer;
 }
 
-.expense-link{
+.expense-link, .material-symbols-outlined{
 cursor: pointer;
-padding: .8rem;
+padding: .5rem;
+font-size: 20px;
+text-decoration: none;
 }
 
 .sort-header {
@@ -76,7 +85,8 @@ padding: .8rem;
   display: block;
   justify-content: right;
   font-size: 1.1rem;
-  padding: 20px 0px 0px 10px
+  text-shadow: .5px .5px .5px rgba(0,0,0,0.1);
+  padding: 20px 0px 0px 5px
 }
 
 // .form-group {

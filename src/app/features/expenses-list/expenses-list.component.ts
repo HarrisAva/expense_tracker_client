@@ -6,13 +6,15 @@ import { Router, ActivatedRoute, RouterModule, Params, RouterLink } from '@angul
 import { FormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { FilterByMonthPipe } from '../../pipes/month-filter.pipe';
-import { Category } from '../../models/category';
+
+
+
 
 
 @Component({
   selector: 'app-expenses-list',
   standalone: true,
-  imports: [ExpenseComponent, RouterModule, FormsModule, DatePipe, FilterByMonthPipe, RouterLink ],
+  imports: [ExpenseComponent, RouterModule, FormsModule, DatePipe, FilterByMonthPipe, RouterLink],
   templateUrl: './expenses-list.component.html',
   styleUrls: ['./expenses-list.component.scss']
 })
@@ -108,7 +110,7 @@ export class ExpensesListComponent implements OnInit {
     });
   }
 
-  sortData(property: keyof Expense) {
+  sortData(property: any) {
     if (this.sortProperty === property) {
       this.isAscending = !this.isAscending;
     } else {

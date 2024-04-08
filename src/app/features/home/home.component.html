@@ -5,7 +5,9 @@
         <br />
         <h2 class="text-success">Expense Summary</h2>
         <br />
-        <h5>(..//Todo - adding Pie Chart / Bar Chart..)</h5>
+        <div class="chart-container">
+          <canvas id="pieChart"></canvas>
+        </div>
         <br />
         <h4>Spending Categories</h4>
         <br />
@@ -72,6 +74,18 @@
             }
           </tbody>
         </table> -->
+      </div>
+      <div class="total">
+        <p>
+          <strong
+            >Total Spending: ${{
+              totalAmount.toLocaleString("en-US", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+              })
+            }}
+          </strong>
+        </p>
       </div>
     </div>
   </body>

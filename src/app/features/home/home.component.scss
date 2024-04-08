@@ -5,14 +5,26 @@ flex-direction: column;
   margin: 0 auto;
   max-width: 500px;
   padding: 10px;
-  min-height: 90vh;
+  // min-height: 90vh;
 
 }
 
 h2, h3, h4, h5 {
   text-align: center;
   padding: 5px;
+  text-shadow: .5px .5px .5px lightgreen;
 }
+
+// .pie-chart {
+//   width: 300px;
+//   height: 300px;
+
+// }
+
+table {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 500px;
+ }
 
 th, td {
   text-align: center;
@@ -20,6 +32,15 @@ th, td {
 .number-column {
     text-align: right;
 }
+
+.total {
+  display: block;
+  text-align: right;
+  font-size: 1rem;
+  padding: 20px 0px 0px 10px;
+  text-shadow: .5px .5px .5px rgba(0,0,0,0.1);
+}
+
 
 
 

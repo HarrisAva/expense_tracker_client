@@ -1,4 +1,12 @@
 <html>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+  />
   <body>
     <div class="container">
       <br />
@@ -40,6 +48,7 @@
               >
                 Category
               </th>
+              <th>Edit/Delete</th>
             </tr>
           </thead>
 
@@ -64,12 +73,30 @@
                 {{ expense.category.name }}
               </td>
               <td>
-                <a class="expense-link" (click)="onEditExpense(expense.id)"
-                  >Edit</a
+                <a
+                  class="material-symbols-outlined"
+                  edit
+                  data-toggle="popover"
+                  title="Edit"
+                  data-placement="left"
+                  (click)="onEditExpense(expense.id)"
+                  >edit</a
                 >
-                <a class="expense-link" (click)="onDeleteExpense(expense.id)"
-                  >Delete</a
+
+                <!-- <a
+                  class="material-symbols-outlined"
+                  (click)="onDeleteExpense(expense.id)"
+                ></a> -->
+                <a
+                  class="material-symbols-outlined"
+                  delete
+                  data-toggle="popover"
+                  title="Delete"
+                  data-placement="right"
+                  (click)="onDeleteExpense(expense.id)"
                 >
+                  delete
+                </a>
               </td>
             </tr>
             }

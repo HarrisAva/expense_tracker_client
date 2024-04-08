@@ -3,6 +3,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Expense } from '../../models/expense';
 import { ExpenseService } from '../../services/expense.service';
 import { CommonModule } from '@angular/common';
+import { Chart } from 'chart.js/auto';
 // import { ExpenseComponent } from '../../components/expense/expense.component';
 // import { FilterByMonthPipe } from '../../pipes/month-filter.pipe';
 // import { FormsModule } from '@angular/forms';
@@ -36,6 +37,22 @@ export class HomeComponent{
 
       this.getTotalAmount();
 
+      this.expenseService.getExpensesByCategory().subscribe((data: any) => {
+        const labels = data.map((item: any) => item.category)
+        const amounts = data.map((item: any) => item.total_amount)
+        const ctx = document.getElementById('pieChart') as HTMLCanvasElement;
+        const pieChart = new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            labels: labels,
+            datasets: [{
+              data: amounts,
+              backgroundColor: this.getRandomColors(amounts.length),
+            }],
+          },
+        });
+      });
+
       // this.expenseService.getExpensesByCategoryAndMonth().subscribe(data => {
       //   this.expensesByCategoryAndMonth = data;
       //   console.log(data)
@@ -48,6 +65,14 @@ export class HomeComponent{
       this.expenseService.getTotalAmount().subscribe((data:any) => {
         this.totalAmount = data.total_amount;
       });
+    }
+
+    getRandomColors (count: number): string[] {
+      const colors = [];
+      for (let i = 0; i < count; i++) {
+        colors.push(`#${Math.floor(Math.random()*16777215).toString(16)}`);
+      }
+      return colors;
     }
 
     sortData(property: any) {

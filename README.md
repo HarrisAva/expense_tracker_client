@@ -1,30 +1,27 @@
-This application aims to manage your dialy expenses. You can input your expenses, track expenditures and view expenses summary in a given timeframe. There are options to edit and delete the expenses.
-Back-end project's respository https://github.com/HarrisAva/expense_tracker_api
+This application aims to manage your dialy expenses. You can input your expenses, track expenditures and view expenses summary and spending categories. The expense list table can be sorted by clicking on the table hearders. There are options to edit and delete the expenses. The application was generated with Angular version 17.
 
-# ExpenseTrackerClient
+Back-end project's respository - https://github.com/HarrisAva/expense_tracker_api
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+## Getting Started
+To get the application up and running, follow these steps:
+1. Prerequisites: Node.js installed on your computer.
+2. Git clone https://github.com/HarrisAva/expense_tracker_client.git
+3. Navigate to the project directory.
+4. Install dependencies - npm install
+5. Start the development server - ng serve
+6. Open the web browser and go to http://localhost:4200/ to view the application.
 
-## Development server
+## Usage
+To use the application, follow these steps:
+1. Sign up for an account.
+2. Log in using your credentials.
+3. On Expense List page, add new expenses by clicking on the "Add Expense" button and filling out necessary information.
+4. Edit or delete expenses by clicking on the Edit or Delete icons. Sort expenses list by clicking on the table headers for date, title, category and amount.
+5. View Expense Summary under Home page. Scroll down to view spending categories in detail. Sort categories and total amount by clicking on the table headers.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Future features to add
+- Options to view expenses by category over a given timeframe
+- Display monthly summary
+- Display last month spending, last 3 month spending, last 6 month spending and last year spending.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

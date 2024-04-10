@@ -2,7 +2,6 @@
   <div class="brand-name">Expense Tracker</div>
   <div class="nav-links">
     @if (isLoggedIn()) {
-
     <span class="welcome"
       ><strong> Welcome, {{ currentUser.first_name || "" }}</strong></span
     >
@@ -20,7 +19,7 @@
     >
     <a (click)="logout()">Logout</a>
 
-    }@else {
+    } @else {
 
     <a routerLink="/login">Login</a>
     <a routerLink="/signup">Sign Up</a>

@@ -1,15 +1,13 @@
 .container {
-
-  // justify-content: center;
-  // align-items: center;
-  // width: 100%;
-  // background-color: #f0f0f0;
-  // min-height: 90vh;
-  // max-width: 800px;
-  // margin: 0 auto;
-  // background-color: #f9f9f9;
-  // padding: 20px;
-
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #f0f0f0;
+  min-height: 90vh;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  padding: 20px;
 }
 
 table {
@@ -19,6 +17,6 @@ table {
 td {
   height: 50px;
   vertical-align: middle;
-  text-align:left;
-  border-style:none;
- }
+  text-align: left;
+  border-style: none;
+}

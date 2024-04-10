@@ -16,7 +16,6 @@ export class UserService {
       this.currentUserBehaviorSubject.next(user);
     }
 
-    // get request to BE web bootstrap, to gather user info
     getBootstrapData(){
       return this.http.get('http://localhost:3000/web/bootstrap').pipe(tap((res:any) => {
         this.setCurrentUser(res.current_user)

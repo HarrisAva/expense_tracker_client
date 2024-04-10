@@ -21,7 +21,5 @@ export class Expense {
     this.user = expense.user;
     this.category_id = expense.category_id;
     this.category_name = expense.category_name;
-
-
   }
 }

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, tap } from 'rxjs';
 import { User } from '../models/user';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class UserService {
     }
 
     getBootstrapData(){
-      return this.http.get('http://localhost:3000/web/bootstrap').pipe(tap((res:any) => {
+      return this.http.get(`${environment.apiUrl}/web/bootstrap`).pipe(tap((res:any) => {
         this.setCurrentUser(res.current_user)
       }))
     }

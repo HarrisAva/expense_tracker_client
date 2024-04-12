@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Expense } from '../models/expense';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -10,43 +11,43 @@ export class ExpenseService {
   constructor(private http: HttpClient) {}
 
   getExpenses(): Observable<Expense[]> {
-    return this.http.get<Expense[]>('http://localhost:3000/expenses');
+    return this.http.get<Expense[]>(`${environment.apiUrl}/expenses`);
   }
 
   getExpense(id: number): Observable<Expense> {
-    return this.http.get<Expense>(`http://localhost:3000/expenses/${id}`);
+    return this.http.get<Expense>(`${environment.apiUrl}/${id}`);
   }
 
   getMyExpenses(): Observable<Expense[]> {
-    return this.http.get<Expense[]>('http://localhost:3000/my_expenses');
+    return this.http.get<Expense[]>(`${environment.apiUrl}/my_expenses`);
   }
 
   getExpensesByCategory(): Observable<any> {
-    return this.http.get<any>('http://localhost:3000/expenses_by_category');
+    return this.http.get<any>(`${environment.apiUrl}/expenses_by_category`);
   }
 
   getExpensesByCategoryAndMonth(): Observable<any> {
     return this.http.get<any>(
-      'http://localhost:3000/expenses_by_category_by_month'
+      `${environment.apiUrl}/expenses_by_category_by_month`
     );
   }
 
   createExpense(expense: Expense): Observable<Expense> {
-    return this.http.post<Expense>('http://localhost:3000/expenses', expense);
+    return this.http.post<Expense>(`${environment.apiUrl}/expenses`, expense);
   }
 
   updateExpense(id: number, expense: Expense): Observable<Expense> {
     return this.http.put<Expense>(
-      `http://localhost:3000/expenses/${id}`,
+      `${environment.apiUrl}/expenses/${id}`,
       expense
     );
   }
 
   deleteExpense(id: number): Observable<Expense> {
-    return this.http.delete<Expense>(`http://localhost:3000/expenses/${id}`);
+    return this.http.delete<Expense>(`${environment.apiUrl}/expenses/${id}`);
   }
 
   getTotalAmount() {
-    return this.http.get<number>('http://localhost:3000/total_amount');
+    return this.http.get<number>(`${environment.apiUrl}/total_amount`);
   }
 }

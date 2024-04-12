@@ -22,9 +22,9 @@ export class ExpenseNewComponent implements OnInit{
     this.expenseNewForm = this.formBuilder.group ({
       date: ['', Validators.required],
       title: ['', Validators.required],
-      description: ['', Validators.required],
+      description: [''],
       amount: ['', Validators.required],
-      category_id: [''],
+      category_id: ['', Validators.required],
 
     })
   }

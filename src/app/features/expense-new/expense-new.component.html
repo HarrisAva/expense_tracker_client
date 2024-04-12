@@ -100,7 +100,13 @@
         <option value="12">Others</option>
       </select>
     </div>
-    <p class="help is-danger" *ngIf="!expenseNewForm.get('category_id').valid">
+    <p
+      class="help is-danger"
+      *ngIf="
+        !expenseNewForm.get('category_id').valid &&
+        expenseNewForm.get('category_id').touched
+      "
+    >
       <small>Category is required</small>
     </p>
 

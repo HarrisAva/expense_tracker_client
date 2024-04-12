@@ -24,7 +24,7 @@ export class ExpenseNewComponent implements OnInit{
       title: ['', Validators.required],
       description: ['', Validators.required],
       amount: ['', Validators.required],
-      category_id: ['', Validators.required],
+      category_id: [''],
 
     })
   }

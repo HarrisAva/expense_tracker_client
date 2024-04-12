@@ -99,15 +99,6 @@
         <option value="12">Others</option>
       </select>
     </div>
-    <p
-      class="help is-danger"
-      *ngIf="
-        !expenseNewForm.get('category').valid &&
-        expenseNewForm.get('category').touched
-      "
-    >
-      <small>Category is required</small>
-    </p>
 
     @for (error of errors; track $index) {
     <p class="error">{{ error }}</p>

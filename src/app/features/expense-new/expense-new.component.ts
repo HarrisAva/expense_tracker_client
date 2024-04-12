@@ -39,9 +39,9 @@ export class ExpenseNewComponent implements OnInit{
 
   ngOnInit() {}
 
-  ngOnDestroy() {
-    this.expenseNewForm.reset();
-  }
+  // ngOnDestroy() {
+  //   this.expenseNewForm.reset();
+  // }
 
   onSubmit(){
     const formValue = this.expenseNewForm.value

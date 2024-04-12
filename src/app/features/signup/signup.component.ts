@@ -38,9 +38,9 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  ngOnDestroy() {
-    this.signupForm.reset();
-  }
+  // ngOnDestroy() {
+  //   this.signupForm.reset();
+  // }
 
   onSignup() {
     const formValue = this.signupForm.value;

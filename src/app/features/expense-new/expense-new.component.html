@@ -83,6 +83,7 @@
         type="number"
         formControlName="category_id"
         placeholder=""
+        required
       >
         <option value="">--Please choose a category--</option>
         <option value="1">Home & Rental</option>
@@ -99,6 +100,9 @@
         <option value="12">Others</option>
       </select>
     </div>
+    <p class="help is-danger" *ngIf="!expenseNewForm.get('category_id').valid">
+      <small>Category is required</small>
+    </p>
 
     @for (error of errors; track $index) {
     <p class="error">{{ error }}</p>

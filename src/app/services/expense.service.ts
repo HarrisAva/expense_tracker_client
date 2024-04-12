@@ -15,7 +15,7 @@ export class ExpenseService {
   }
 
   getExpense(id: number): Observable<Expense> {
-    return this.http.get<Expense>(`${environment.apiUrl}/${id}`);
+    return this.http.get<Expense>(`${environment.apiUrl}/expenses/${id}`);
   }
 
   getMyExpenses(): Observable<Expense[]> {

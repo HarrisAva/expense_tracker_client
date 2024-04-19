@@ -19,7 +19,7 @@ export class ExpenseNewComponent implements OnInit{
     title: new FormControl ('', Validators.required),
     description: new FormControl (''),
     amount: new FormControl ('', Validators.required),
-    category_id: new FormControl ('', Validators.required),
+    category_id: new FormControl (''),
 
 
   });
@@ -45,6 +45,8 @@ export class ExpenseNewComponent implements OnInit{
 
   onSubmit(){
     const formValue = this.expenseNewForm.value
+
+    console.log(formValue)
 
     this.expenseService.createExpense(formValue).subscribe({
       next: (res:any) => {

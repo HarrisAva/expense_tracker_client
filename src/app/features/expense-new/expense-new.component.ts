@@ -14,27 +14,29 @@ import { CommonModule } from '@angular/common';
 })
 export class ExpenseNewComponent implements OnInit{
 
-  expenseNewForm: FormGroup = new FormGroup ({
-    date: new FormControl ('', Validators.required),
-    title: new FormControl ('', Validators.required),
-    description: new FormControl (''),
-    amount: new FormControl ('', Validators.required),
-    category_id: new FormControl (''),
+  // expenseNewForm: FormGroup = new FormGroup ({
+    // date: new FormControl ('', Validators.required),
+    // title: new FormControl ('', Validators.required),
+    // description: new FormControl (''),
+    // amount: new FormControl ('', Validators.required),
+    // category_id: new FormControl (''),
 
 
-  });
+  // });
+  expenseNewForm: FormGroup;
+
   errors: string[] = []
 
   constructor(private authService:AuthenticationService, private router:Router, private route: ActivatedRoute ,private expenseService:ExpenseService, private formBuilder: FormBuilder) {
 
-    // this.expenseNewForm = this.formBuilder.group ({
-    //   date: ['', Validators.required],
-    //   title: ['', Validators.required],
-    //   description: [''],
-    //   amount: ['', Validators.required],
-    //   category_id: ['', Validators.required],
+    this.expenseNewForm = this.formBuilder.group ({
+      date: ['', Validators.required],
+      title: ['', Validators.required],
+      description: [''],
+      amount: ['', Validators.required],
+      category_id: ['', Validators.required],
 
-    // })
+    })
   }
 
   ngOnInit() {}

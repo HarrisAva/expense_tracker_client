@@ -13,11 +13,11 @@ To get the application up and running, follow these steps:
 
 ## Usage
 To use the application, follow these steps:
-1. Sign up for an account.
+1. Sign up for an account. (Or, login with username: test1234, password: password1234)
 2. Log in using your credentials.
 3. On Expense List page, add new expenses by clicking on the "Add Expense" button and filling out necessary information.
 4. Edit or delete expenses by clicking on the Edit or Delete icons. Sort expenses list by clicking on the table headers for date, title, category and amount.
-5. View Expense Summary under Home page. Scroll down to view spending categories in detail. Sort categories and total amount by clicking on the table headers.
+5. View Expense Summary under Summary page. The pie chart displays the distribution of the expenses. Scroll down to view spending categories in detail. Sort categories and total amount by clicking on the table headers.
 
 ## Future features to add
 - Options to view expenses by category over a given timeframe

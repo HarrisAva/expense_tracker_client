@@ -19,7 +19,7 @@ export class ExpenseNewComponent implements OnInit{
     title: new FormControl ('', Validators.required),
     description: new FormControl (''),
     amount: new FormControl ('', Validators.required),
-    category_id: new FormControl (''),
+    category_id: new FormControl ('', Validators.required),
 
 
   });
